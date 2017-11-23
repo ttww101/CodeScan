@@ -1,0 +1,45 @@
+//
+//  JMORCoder-Prefix.pch
+//  JMORCode
+//
+//  Created by JM Zhao on 2017/11/22.
+//  Copyright © 2017年 JunMing. All rights reserved.
+// ScanCode-QR & BarCode Pro
+
+#ifndef JMORCoder_Prefix_pch
+#define JMORCoder_Prefix_pch
+#import "UIView+Extension.h"
+#import "MBProgressHUD.h"
+
+#define GoogleAppID @"ca-app-pub-5649482177498836~9470054047"
+#define GoogleUtiID_origin @"ca-app-pub-5649482177498836/9140372248"
+#define GoogleUtiID_pageInsert @"ca-app-pub-5649482177498836/1120790739"
+
+#define alertHeight 50
+#define kW [UIScreen mainScreen].bounds.size.width
+#define kH [UIScreen mainScreen].bounds.size.height
+
+#define JMSelf(weakSelf) __weak __typeof(&*self)weakSelf = self;
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+#define JMTabViewBaseColor JMColor(245.0, 245.0, 245.0)
+#define JMBaseColor HEXCOLOR(0x2C324C)
+#define JMColor(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0]
+#define JMColorRGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+#define JMRandomColor JMColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define HEXCOLOR(c) [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0]
+#define UIColorFromRGB(rgbValue,A) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:A]
+
+#define IOS7 [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0
+#define iOS7AddStatusHeight     (IOS7?20:0)
+#define D_LocalizedCardString(s) [[NSBundle mainBundle] localizedStringForKey:s value:nil table:@"CardToolLanguage"]
+#define D_Main_Appdelegate (AppDelegate *)[UIApplication sharedApplication].delegate
+#define AppiTunesID_Sketchpad @"https://itunes.apple.com/cn/app/Sketchpad-Pro/id1286373829?mt=8"
+#define AppiTunesID_ebookReader @"https://itunes.apple.com/cn/app/ebookreader/id1269413156?mt=8"
+
+// @"[^"]*[\u4E00-\u9FA5]+[^"\n]*?"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* JMORCoder_Prefix_pch */

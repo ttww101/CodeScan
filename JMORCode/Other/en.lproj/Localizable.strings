@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  JMORCode
+
+  Created by JM Zhao on 2017/11/22.
+  Copyright © 2017年 JunMing. All rights reserved.
+*/
+"gif.base.alert.close"="Close";
+"gif.base.alert.alert"="Alert";
+"gif.base.alert.cancle"="Cancle";
+"gif.base.alert.success"="Success";
+"gif.base.alert.Failed"="Failed";
+"gif.base.alert.done"="Done";
+"gif.base.alert.sure"="Done";
+"gif.base.alert.editer"="Edit";
+"gif.base.alert.delete"="Delete";
+"gif.base.alert.reflash"="Refresh";
+"gif.base.alert.setting"="Setting";
+
+"gif.base.otherApp.epubreader"="追书神器";
+"gif.base.comment.refuse"="Cruel refused";
+"gif.base.comment.comment"="Play a praise";
+"gif.base.comment.later"="Comment later";
+"gif.base.comment.title"="Your comments are very important to us, please also appreciate the praise!";
+
+// set
+"gif.set.navigation.title"="Settings";
+"gif.set.navigation.rightTitle"="Done";
+"gif.set.sectionZero.rowZero"="VIP Features";
+"gif.set.sectionOne.rowZero"="Instructions";
+"gif.set.sectionOne.rowOne"="Clear Cache";
+"gif.set.sectionTwo.rowZero"="Licenses";
+"gif.set.sectionTwo.rowOne"="About";
+"gif.set.header.SectionZero"="Upgrade";
+"gif.set.header.SectionOne"="About&Licenses";
+"gif.set.header.SectionTwo"="Help&Info";
+"gif.set.header.SectionThree"="Apps made by author";
+"gif.set.aboutUs.rowZero"="Feedback";
+"gif.set.aboutUs.rowOne"="Like";
+"gif.set.aboutUs.rowTwo"="ShareToFriends";
+
+"gif.set.aboutUs.fromCarame"="Camera";
+"gif.set.aboutUs.fromalbum"="Album";
+"gif.set.aboutUs.vctitle"="Sketchpad";
+
+"orscan.items.scan" = "Scan";
+"orscan.items.copy" = "CopyText";
+"orscan.items.open" = "Open";
+"orscan.items.copySuccess" = "CopySuccess";
+"orscan.items.scanBarCode" = "ScanBarcode";
+"orscan.items.scanQRCode" = "ScanQRCode";
+"orscan.items.creatBarCode" = "GenerateBarcode";
+"orscan.items.creatQRCode" = "GenerateQRCode";
+"orscan.items.scanAD" = "AD";
+"orscan.items.ORCode" = "QRCode";
+"orscan.items.BarCode" = "Barcode";
+"orscan.items.scanORCode.alert" = "Align the frame with the QR code to automatically scan";
+"orscan.items.scanBarCode.alert" = "Align the frame with the Barcode to automatically scan";
+"orscan.items.scanORCodeFail.alert" = "The image does not identify the QR code";
+"orscan.items.scanLibaryFail" = "Album read permission is not turned on";
+"orscan.items.scanCarmerFail" = "Camera read permission is not turned on";
+"orscan.items.scanSysSetting" = "Enter the system\n【Set】->【Privacy】->【Album】\n%@Turn on camera access";
+"orscan.items.scanShare" = "Share";
+"orscan.items.scanSaveLib" = "SaveToAlbum";
+"orscan.items.scanInputNumber" = "Enter Number";
+"orscan.items.scanCreatCodeFrist" = "GenerateBarcodeFrist";
+"orscan.items.scanAlbum" = "Album";
+

@@ -1,0 +1,18 @@
+PODS:
+  - Google-Mobile-Ads-SDK (7.24.1)
+  - MBProgressHUD (1.0.0)
+  - UMengAnalytics (4.2.4)
+
+DEPENDENCIES:
+  - Google-Mobile-Ads-SDK
+  - MBProgressHUD
+  - UMengAnalytics
+
+SPEC CHECKSUMS:
+  Google-Mobile-Ads-SDK: ed8004a7265b424568dc84f3d2bbe3ea3fff958f
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+
+PODFILE CHECKSUM: 282b9ed4bd91bd4f7a59743506cc41a2965ae7f6
+
+COCOAPODS: 1.3.1

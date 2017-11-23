@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  JMORCode
+
+  Created by JM Zhao on 2017/11/22.
+  Copyright © 2017年 JunMing. All rights reserved.
+*/
+
+"gif.base.alert.close"="关闭";
+"gif.base.alert.cancle"="取消";
+"gif.base.alert.alert"="提示";
+"gif.base.alert.success"="成功";
+"gif.base.alert.Failed"="失败";
+"gif.base.alert.done"="完成";
+"gif.base.alert.sure"="确定";
+"gif.base.alert.editer"="编辑";
+"gif.base.alert.delete"="删除";
+"gif.base.alert.setting"="设置";
+
+"gif.base.otherApp.epubreader"="追书神器";
+"gif.base.comment.refuse"="残忍拒绝";
+"gif.base.comment.comment"="打赏一个好评";
+"gif.base.comment.later"="以后再说";
+"gif.base.comment.title"="您的宝贵意见我们更新改进APP最大的动力和方向, 还请不吝赏个好评!";
+
+// set
+"gif.set.navigation.title"="设置";
+"gif.set.navigation.rightTitle"="完成";
+"gif.set.header.SectionThree"="推荐应用";
+"gif.set.aboutUs.rowZero"="用户反馈";
+"gif.set.aboutUs.rowOne"="给应用评分";
+"gif.set.aboutUs.rowTwo"="分享给朋友";
+"gif.set.aboutUs.fromCarame"="从相机获取";
+"gif.set.aboutUs.fromalbum"="从相册获取";
+"gif.set.aboutUs.vctitle"="我的画板";
+
+"orscan.items.scan" = "扫一扫";
+"orscan.items.copy" = "复制文本";
+"orscan.items.open" = "打开";
+"orscan.items.copySuccess" = "复制成功";
+"orscan.items.scanBarCode" = "扫描条形码";
+"orscan.items.scanQRCode" = "扫描二维码";
+"orscan.items.creatBarCode" = "生成条形码";
+"orscan.items.creatQRCode" = "生成二维码";
+"orscan.items.scanAD" = "广告";
+"orscan.items.ORCode" = "二维码";
+"orscan.items.BarCode" = "条形码";
+"orscan.items.scanORCode.alert" = "将取景框对准二维码,即可自动扫描";
+"orscan.items.scanBarCode.alert" = "将取景框对准条码,即可自动扫描";
+"orscan.items.scanORCodeFail.alert" = "图片中未识别到二维码";
+"orscan.items.scanLibaryFail" = "相册读取权限未开启";
+"orscan.items.scanCarmerFail" = "相机读取权限未开启";
+"orscan.items.scanSysSetting" = "请到手机系统的\n【设置】->【隐私】->【相册】\n对%@开启相机的访问权限";
+"orscan.items.scanShare" = "分享";
+"orscan.items.scanSaveLib" = "保存到相册";
+"orscan.items.scanAlbum" = "相册";
+"orscan.items.scanInputNumber" = "在此输入数字";
+"orscan.items.scanCreatCodeFrist" = "请先生成条码";
+
+
+
+
+
+
+
+
+
+
+
+

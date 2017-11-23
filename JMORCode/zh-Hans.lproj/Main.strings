@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "生成"; ObjectID = "Ict-Un-jTd"; */
+"Ict-Un-jTd.normalTitle" = "生成";
+
+/* Class = "UIButton"; normalTitle = "生成"; ObjectID = "eAM-Jv-TfV"; */
+"eAM-Jv-TfV.normalTitle" = "生成";
+
+/* Class = "UIViewController"; title = "生成二维码"; ObjectID = "lLS-tm-89M"; */
+"lLS-tm-89M.title" = "生成二维码";
+
+/* Class = "UITextField"; placeholder = "请输入数字"; ObjectID = "m0i-eN-qSk"; */
+"m0i-eN-qSk.placeholder" = "请输入数字";
+
+/* Class = "UITextField"; placeholder = "请输入网页地址"; ObjectID = "ojg-hh-0W6"; */
+"ojg-hh-0W6.placeholder" = "请输入网页地址";
+
+/* Class = "UIViewController"; title = "生成条形码"; ObjectID = "ptu-yr-9iQ"; */
+"ptu-yr-9iQ.title" = "生成条形码";
