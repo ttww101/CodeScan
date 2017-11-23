@@ -16,7 +16,7 @@
 #import "JMADView.h"
 #import "FLAnimatedImageView.h"
 #import "FLAnimatedImage.h"
-
+#import "UINavigationBar+Awesome.h"
 @import GoogleMobileAds;
 static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 @interface JMORCodeController ()<GADNativeExpressAdViewDelegate, GADVideoControllerDelegate, GADInterstitialDelegate>
@@ -30,6 +30,13 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 
 @implementation JMORCodeController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+    [self.navigationController.navigationBar setNavigationBarLine:0.0];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -37,7 +44,6 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
     self.menuView.didSelectBlock = ^(NSInteger type) {[ws chouseORCode:type];};
     self.view.backgroundColor = JMColor(214, 218, 219);
     self.title = NSLocalizedString(@"orscan.items.scan", "");
-    
     [self setupAd];
 }
 
