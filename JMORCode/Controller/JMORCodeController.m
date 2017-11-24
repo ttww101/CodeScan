@@ -17,6 +17,8 @@
 #import "FLAnimatedImageView.h"
 #import "FLAnimatedImage.h"
 #import "UINavigationBar+Awesome.h"
+#import "JMQRCodeCollectionController.h"
+
 @import GoogleMobileAds;
 static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 @interface JMORCodeController ()<GADNativeExpressAdViewDelegate, GADVideoControllerDelegate, GADInterstitialDelegate>
@@ -42,7 +44,6 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
     
     JMSelf(ws);
     self.menuView.didSelectBlock = ^(NSInteger type) {[ws chouseORCode:type];};
-//    self.view.backgroundColor = JMColor(214, 218, 219);
     self.title = NSLocalizedString(@"orscan.items.scan", "");
     [self setupAd];
 }
@@ -91,8 +92,11 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
         [self.navigationController pushViewController:scanVc animated:YES];
     } else if (type == 3) {
         
-        JMDrawQrCoderController *drawQrVC = [self.storyboard instantiateViewControllerWithIdentifier:@"drawQr"];
-        [self.navigationController pushViewController:drawQrVC animated:YES];
+        JMQRCodeCollectionController *qrCode = [[JMQRCodeCollectionController alloc] init];
+        [self.navigationController pushViewController:qrCode animated:YES];
+        
+//        JMDrawQrCoderController *drawQrVC = [self.storyboard instantiateViewControllerWithIdentifier:@"drawQr"];
+//        [self.navigationController pushViewController:drawQrVC animated:YES];
     
     } else if (type == 4) {
         
@@ -152,11 +156,9 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 #pragma mark -- 初始化广告
 - (void)setupAd
 {
-//    self.googleAdView = [[GADNativeExpressAdView alloc] initWithAdSize:kGADAdSizeBanner];
     self.googleAdView.adUnitID = AdUnitId;
     self.googleAdView.rootViewController = self;
     self.googleAdView.delegate = self;
-//    [self.adView addSubview:self.googleAdView];
     
     // The video options object can be used to control the initial mute state of video assets.
     // By default, they start muted.

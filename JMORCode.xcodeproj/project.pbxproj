@@ -12,6 +12,10 @@
 		0438E69F1FC6D17A0030255D /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438E69C1FC6D17A0030255D /* FLAnimatedImage.m */; };
 		0438E6A01FC6D17B0030255D /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438E69E1FC6D17A0030255D /* FLAnimatedImageView.m */; };
 		0438E6A21FC6D4F50030255D /* loadings.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0438E6A11FC6D4F50030255D /* loadings.gif */; };
+		0438E6C91FC7FE4F0030255D /* JMQRCodeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438E6C81FC7FE4E0030255D /* JMQRCodeCollectionController.m */; };
+		0438E6CC1FC7FF670030255D /* JMQRCodeCollModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438E6CB1FC7FF670030255D /* JMQRCodeCollModel.m */; };
+		0438E6CF1FC7FF810030255D /* JMQRCodeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438E6CE1FC7FF810030255D /* JMQRCodeCollectionViewCell.m */; };
+		0438E6D21FC80D320030255D /* JMBaseCreatCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438E6D11FC80D320030255D /* JMBaseCreatCodeController.m */; };
 		04B67BD51FC42DA9006C943E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B67BD31FC42DA9006C943E /* Main.storyboard */; };
 		04B67BD71FC42DA9006C943E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B67BD61FC42DA9006C943E /* Assets.xcassets */; };
 		04B67BDA1FC42DA9006C943E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B67BD81FC42DA9006C943E /* LaunchScreen.storyboard */; };
@@ -67,6 +71,14 @@
 		0438E69D1FC6D17A0030255D /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
 		0438E69E1FC6D17A0030255D /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
 		0438E6A11FC6D4F50030255D /* loadings.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loadings.gif; sourceTree = "<group>"; };
+		0438E6C71FC7FE4E0030255D /* JMQRCodeCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMQRCodeCollectionController.h; sourceTree = "<group>"; };
+		0438E6C81FC7FE4E0030255D /* JMQRCodeCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMQRCodeCollectionController.m; sourceTree = "<group>"; };
+		0438E6CA1FC7FF670030255D /* JMQRCodeCollModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMQRCodeCollModel.h; sourceTree = "<group>"; };
+		0438E6CB1FC7FF670030255D /* JMQRCodeCollModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMQRCodeCollModel.m; sourceTree = "<group>"; };
+		0438E6CD1FC7FF810030255D /* JMQRCodeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMQRCodeCollectionViewCell.h; sourceTree = "<group>"; };
+		0438E6CE1FC7FF810030255D /* JMQRCodeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMQRCodeCollectionViewCell.m; sourceTree = "<group>"; };
+		0438E6D01FC80D320030255D /* JMBaseCreatCodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMBaseCreatCodeController.h; sourceTree = "<group>"; };
+		0438E6D11FC80D320030255D /* JMBaseCreatCodeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMBaseCreatCodeController.m; sourceTree = "<group>"; };
 		04B67BCA1FC42DA9006C943E /* JMORCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMORCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B67BD41FC42DA9006C943E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04B67BD61FC42DA9006C943E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -262,6 +274,10 @@
 				04B67C321FC55251006C943E /* JMAboutUsController.m */,
 				04B67C481FC557B5006C943E /* JMBaseWebViewController.h */,
 				04B67C471FC557B4006C943E /* JMBaseWebViewController.m */,
+				0438E6C71FC7FE4E0030255D /* JMQRCodeCollectionController.h */,
+				0438E6C81FC7FE4E0030255D /* JMQRCodeCollectionController.m */,
+				0438E6D01FC80D320030255D /* JMBaseCreatCodeController.h */,
+				0438E6D11FC80D320030255D /* JMBaseCreatCodeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +307,10 @@
 				04B67C441FC557A8006C943E /* JMWebProgressView.m */,
 				0438E6941FC6A9100030255D /* HFParticleSearchAnimateView.h */,
 				0438E6951FC6A9100030255D /* HFParticleSearchAnimateView.m */,
+				0438E6CA1FC7FF670030255D /* JMQRCodeCollModel.h */,
+				0438E6CB1FC7FF670030255D /* JMQRCodeCollModel.m */,
+				0438E6CD1FC7FF810030255D /* JMQRCodeCollectionViewCell.h */,
+				0438E6CE1FC7FF810030255D /* JMQRCodeCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -506,6 +526,7 @@
 				04B67C0C1FC4371E006C943E /* JMDrawBarCoderController.m in Sources */,
 				0438E69F1FC6D17A0030255D /* FLAnimatedImage.m in Sources */,
 				04B67C271FC535E2006C943E /* AppDelegate.m in Sources */,
+				0438E6CF1FC7FF810030255D /* JMQRCodeCollectionViewCell.m in Sources */,
 				04B67C311FC54B3E006C943E /* JMPhotosAlertView.m in Sources */,
 				04B67C341FC55251006C943E /* JMAboutUsController.m in Sources */,
 				0438E6961FC6A9100030255D /* HFParticleSearchAnimateView.m in Sources */,
@@ -516,8 +537,11 @@
 				04B67C3F1FC5529E006C943E /* JMAboutCell.m in Sources */,
 				04B67C551FC56A1B006C943E /* JMMenuItemModel.m in Sources */,
 				04B67C401FC5529E006C943E /* JMAboutHeaderView.m in Sources */,
+				0438E6D21FC80D320030255D /* JMBaseCreatCodeController.m in Sources */,
 				04B67C4F1FC566F8006C943E /* JMADView.m in Sources */,
 				04B67BDD1FC42DA9006C943E /* main.m in Sources */,
+				0438E6C91FC7FE4F0030255D /* JMQRCodeCollectionController.m in Sources */,
+				0438E6CC1FC7FF670030255D /* JMQRCodeCollModel.m in Sources */,
 				04B67C3E1FC5529E006C943E /* JMAboutModel.m in Sources */,
 				0438E6991FC6A9220030255D /* UIImage+Common.m in Sources */,
 				04B67C1F1FC5351C006C943E /* UIView+Extension.m in Sources */,
