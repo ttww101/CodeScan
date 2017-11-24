@@ -34,7 +34,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
-    [self.navigationController.navigationBar setNavigationBarLine:0.0];
+    [self.navigationController.navigationBar It_setNavigationBarBackIndicatorView:0.0];
 }
 
 - (void)viewDidLoad {
@@ -42,7 +42,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
     
     JMSelf(ws);
     self.menuView.didSelectBlock = ^(NSInteger type) {[ws chouseORCode:type];};
-    self.view.backgroundColor = JMColor(214, 218, 219);
+//    self.view.backgroundColor = JMColor(214, 218, 219);
     self.title = NSLocalizedString(@"orscan.items.scan", "");
     [self setupAd];
 }

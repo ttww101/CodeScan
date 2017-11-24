@@ -42,12 +42,13 @@
     [super layoutSubviews];
     
     int i = 0;
-    CGFloat margin = 20;
-    CGFloat w = (self.bounds.size.width-margin*4)/3;
+    CGFloat marginW = 20;
+    CGFloat w = (self.bounds.size.width-marginW*4)/3;
+    CGFloat marginH = (self.height-w*2)/3;
     
     for (JMMenuItem *view in self.subviews) {
-        CGFloat y = i/3*(w+margin)+margin;
-        CGFloat x = i < 9 ? i%3*(w+margin)+margin : (w+margin)+margin;
+        CGFloat y = i/3*(w+marginH)+marginH;
+        CGFloat x = i < 9 ? i%3*(w+marginW)+marginW : (w+marginW)+marginW;
         view.frame = CGRectMake(x, y, w, w);
         i ++;
     }
