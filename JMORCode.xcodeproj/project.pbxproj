@@ -699,6 +699,7 @@
 				DEVELOPMENT_TEAM = 48K328WFVJ;
 				GCC_PREFIX_HEADER = "JMORCode/Other/JMORCoder-Prefix.pch";
 				INFOPLIST_FILE = JMORCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JunMing-Zhao.JMORCode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -715,6 +716,7 @@
 				DEVELOPMENT_TEAM = 48K328WFVJ;
 				GCC_PREFIX_HEADER = "JMORCode/Other/JMORCoder-Prefix.pch";
 				INFOPLIST_FILE = JMORCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JunMing-Zhao.JMORCode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
