@@ -48,6 +48,11 @@
 		04B67C5C1FC57670006C943E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04B67C5E1FC57670006C943E /* InfoPlist.strings */; };
 		04B67C601FC57679006C943E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04B67C621FC57679006C943E /* Localizable.strings */; };
 		98B22944415FD5F885025A22 /* libPods-JMORCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004E15F85EED893A9D645A85 /* libPods-JMORCode.a */; };
+		A2AECCDE1FC8FF740020F2F0 /* JMMainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCDC1FC8FF740020F2F0 /* JMMainNavController.m */; };
+		A2AECCE11FC9041A0020F2F0 /* UINavigationController+StatusbarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCE01FC9041A0020F2F0 /* UINavigationController+StatusbarStyle.m */; };
+		A2AECCE51FC911DF0020F2F0 /* JMTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCE41FC911DF0020F2F0 /* JMTextInputViewController.m */; };
+		A2AECCE81FC914D40020F2F0 /* JMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCE71FC914D40020F2F0 /* JMTextView.m */; };
+		A2AECCEB1FC920FF0020F2F0 /* JMSaveCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCEA1FC920FF0020F2F0 /* JMSaveCodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +148,16 @@
 		04B67C611FC57679006C943E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04B67C631FC5767A006C943E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		327F13DA01D6E706FAD1A851 /* Pods-JMORCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMORCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JMORCode/Pods-JMORCode.debug.xcconfig"; sourceTree = "<group>"; };
+		A2AECCDC1FC8FF740020F2F0 /* JMMainNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMMainNavController.m; sourceTree = "<group>"; };
+		A2AECCDD1FC8FF740020F2F0 /* JMMainNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMMainNavController.h; sourceTree = "<group>"; };
+		A2AECCDF1FC9041A0020F2F0 /* UINavigationController+StatusbarStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusbarStyle.h"; sourceTree = "<group>"; };
+		A2AECCE01FC9041A0020F2F0 /* UINavigationController+StatusbarStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusbarStyle.m"; sourceTree = "<group>"; };
+		A2AECCE31FC911DF0020F2F0 /* JMTextInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTextInputViewController.h; sourceTree = "<group>"; };
+		A2AECCE41FC911DF0020F2F0 /* JMTextInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTextInputViewController.m; sourceTree = "<group>"; };
+		A2AECCE61FC914D40020F2F0 /* JMTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMTextView.h; sourceTree = "<group>"; };
+		A2AECCE71FC914D40020F2F0 /* JMTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTextView.m; sourceTree = "<group>"; };
+		A2AECCE91FC920FF0020F2F0 /* JMSaveCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSaveCodeViewController.h; sourceTree = "<group>"; };
+		A2AECCEA1FC920FF0020F2F0 /* JMSaveCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSaveCodeViewController.m; sourceTree = "<group>"; };
 		EEF3D5204CAB1408BCDF38C3 /* Pods-JMORCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMORCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-JMORCode/Pods-JMORCode.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +214,7 @@
 		04B67BCC1FC42DA9006C943E /* JMORCode */ = {
 			isa = PBXGroup;
 			children = (
+				A2AECCE21FC911C40020F2F0 /* SubController */,
 				04B67C231FC5355E006C943E /* Other */,
 				04B67C241FC5355E006C943E /* Tools */,
 				04B67C211FC53544006C943E /* Controller */,
@@ -257,6 +273,8 @@
 				04B67C151FC5351C006C943E /* NSString+Extension.m */,
 				04B67C181FC5351C006C943E /* UINavigationBar+Awesome.h */,
 				04B67C191FC5351C006C943E /* UINavigationBar+Awesome.m */,
+				A2AECCDF1FC9041A0020F2F0 /* UINavigationController+StatusbarStyle.h */,
+				A2AECCE01FC9041A0020F2F0 /* UINavigationController+StatusbarStyle.m */,
 				04B67C1A1FC5351C006C943E /* UIView+Extension.h */,
 				04B67C1B1FC5351C006C943E /* UIView+Extension.m */,
 				0438E6971FC6A9220030255D /* UIImage+Common.h */,
@@ -278,6 +296,8 @@
 				0438E6C81FC7FE4E0030255D /* JMQRCodeCollectionController.m */,
 				0438E6D01FC80D320030255D /* JMBaseCreatCodeController.h */,
 				0438E6D11FC80D320030255D /* JMBaseCreatCodeController.m */,
+				A2AECCDD1FC8FF740020F2F0 /* JMMainNavController.h */,
+				A2AECCDC1FC8FF740020F2F0 /* JMMainNavController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,6 +372,19 @@
 				EEF3D5204CAB1408BCDF38C3 /* Pods-JMORCode.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A2AECCE21FC911C40020F2F0 /* SubController */ = {
+			isa = PBXGroup;
+			children = (
+				A2AECCE31FC911DF0020F2F0 /* JMTextInputViewController.h */,
+				A2AECCE41FC911DF0020F2F0 /* JMTextInputViewController.m */,
+				A2AECCE61FC914D40020F2F0 /* JMTextView.h */,
+				A2AECCE71FC914D40020F2F0 /* JMTextView.m */,
+				A2AECCE91FC920FF0020F2F0 /* JMSaveCodeViewController.h */,
+				A2AECCEA1FC920FF0020F2F0 /* JMSaveCodeViewController.m */,
+			);
+			path = SubController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,10 +549,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B67C1E1FC5351C006C943E /* UINavigationBar+Awesome.m in Sources */,
+				A2AECCEB1FC920FF0020F2F0 /* JMSaveCodeViewController.m in Sources */,
 				04B67C061FC4346C006C943E /* MMScanViewController.m in Sources */,
 				04B67C0F1FC43744006C943E /* JMDrawQrCoderController.m in Sources */,
 				04B67C521FC56943006C943E /* JMMenuItem.m in Sources */,
 				04B67C491FC557B5006C943E /* JMBaseWebViewController.m in Sources */,
+				A2AECCE11FC9041A0020F2F0 /* UINavigationController+StatusbarStyle.m in Sources */,
 				04B67C461FC557A9006C943E /* JMWebProgressView.m in Sources */,
 				04B67C4C1FC557FE006C943E /* NSTimer+JMAddition.m in Sources */,
 				0438E6A01FC6D17B0030255D /* FLAnimatedImageView.m in Sources */,
@@ -528,6 +563,7 @@
 				04B67C271FC535E2006C943E /* AppDelegate.m in Sources */,
 				0438E6CF1FC7FF810030255D /* JMQRCodeCollectionViewCell.m in Sources */,
 				04B67C311FC54B3E006C943E /* JMPhotosAlertView.m in Sources */,
+				A2AECCE51FC911DF0020F2F0 /* JMTextInputViewController.m in Sources */,
 				04B67C341FC55251006C943E /* JMAboutUsController.m in Sources */,
 				0438E6961FC6A9100030255D /* HFParticleSearchAnimateView.m in Sources */,
 				04B67C431FC552BB006C943E /* JMUserDefault.m in Sources */,
@@ -539,12 +575,14 @@
 				04B67C401FC5529E006C943E /* JMAboutHeaderView.m in Sources */,
 				0438E6D21FC80D320030255D /* JMBaseCreatCodeController.m in Sources */,
 				04B67C4F1FC566F8006C943E /* JMADView.m in Sources */,
+				A2AECCE81FC914D40020F2F0 /* JMTextView.m in Sources */,
 				04B67BDD1FC42DA9006C943E /* main.m in Sources */,
 				0438E6C91FC7FE4F0030255D /* JMQRCodeCollectionController.m in Sources */,
 				0438E6CC1FC7FF670030255D /* JMQRCodeCollModel.m in Sources */,
 				04B67C3E1FC5529E006C943E /* JMAboutModel.m in Sources */,
 				0438E6991FC6A9220030255D /* UIImage+Common.m in Sources */,
 				04B67C1F1FC5351C006C943E /* UIView+Extension.m in Sources */,
+				A2AECCDE1FC8FF740020F2F0 /* JMMainNavController.m in Sources */,
 				04B67C3D1FC5529E006C943E /* JMAccountHeaderFooter.m in Sources */,
 				04B67C051FC4346C006C943E /* MMScanView.m in Sources */,
 			);

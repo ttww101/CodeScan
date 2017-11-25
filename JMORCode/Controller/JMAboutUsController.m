@@ -23,10 +23,16 @@
 
 @implementation JMAboutUsController
 
-- (void)viewWillAppear:(BOOL)animated{
-    
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.tintColor = JMBaseColor;
+    self.navigationController.navigationBar.tintColor = JMColor(41, 41, 41);
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    NSDictionary *attr = @{
+                           NSForegroundColorAttributeName : JMColor(41, 41, 41),
+                           NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
+                           };
+    self.navigationController.navigationBar.titleTextAttributes = attr;
 }
 
 - (void)viewDidLoad {

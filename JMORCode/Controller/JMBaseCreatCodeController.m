@@ -16,9 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = JMColor(240, 240, 240);
 }
 
+- (UIImage *)creatQRCodeImage:(NSString *)text
+{
+    return [MMScanViewController createQRImageWithString:text QRSize:CGSizeMake(kW, kW)];
+}
+
+- (UIImage *)creatBRCodeImage:(NSString *)text
+{
+    return [MMScanViewController createBarCodeImageWithString:text barSize:CGSizeMake(kW, kW-100)];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

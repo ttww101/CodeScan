@@ -145,8 +145,20 @@
     [super viewWillAppear:animated];
     //开始捕获
     if (self.session) [self.session startRunning];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    NSDictionary *attr = @{
+                           NSForegroundColorAttributeName : [UIColor whiteColor],
+                           NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
+                           };
+    self.navigationController.navigationBar.titleTextAttributes = attr;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    // http://blog.csdn.net/gxp1032901/article/details/41879557
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

@@ -57,7 +57,7 @@
 - (NSArray *)creatModels
 {
     NSMutableArray *models = [NSMutableArray array];
-    NSArray *dics = @[@{@"title":NSLocalizedString(@"orscan.items.scan", ""), @"image":@"ScanCode"}, @{@"title":NSLocalizedString(@"orscan.items.scanQRCode", ""), @"image":@"QRCode"}, @{@"title":NSLocalizedString(@"orscan.items.creatBarCode", ""), @"image":@"BarCoder"}, @{@"title":NSLocalizedString(@"orscan.items.creatQRCode", ""), @"image":@"QRCode"}, @{@"title":NSLocalizedString(@"orscan.items.creatBarCode", ""), @"image":@"BarCoder"}, @{@"title":NSLocalizedString(@"orscan.items.scanAD", ""), @"image":@"AD"}];
+    NSArray *dics = @[@{@"title":NSLocalizedString(@"orscan.items.scan", ""), @"image":@"ScanCode"}, @{@"title":NSLocalizedString(@"orscan.items.scanQRCode", ""), @"image":@"scanqrCode"}, @{@"title":NSLocalizedString(@"orscan.items.scanBarCode", ""), @"image":@"scanbarCode"}, @{@"title":NSLocalizedString(@"orscan.items.creatQRCode", ""), @"image":@"QRCode"}, @{@"title":NSLocalizedString(@"orscan.items.creatBarCode", ""), @"image":@"BarCoder"}, @{@"title":NSLocalizedString(@"orscan.items.scanAD", ""), @"image":@"AD"}];
     for (NSDictionary *dic in dics) {
         JMMenuItemModel *model = [JMMenuItemModel new];
         model.title = dic[@"title"];

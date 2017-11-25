@@ -16,7 +16,6 @@
 #import "JMADView.h"
 #import "FLAnimatedImageView.h"
 #import "FLAnimatedImage.h"
-#import "UINavigationBar+Awesome.h"
 #import "JMQRCodeCollectionController.h"
 
 @import GoogleMobileAds;
@@ -35,8 +34,18 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
-    [self.navigationController.navigationBar It_setNavigationBarBackIndicatorView:0.0];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    NSDictionary *attr = @{
+                           NSForegroundColorAttributeName : [UIColor whiteColor],
+                           NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
+                           };
+    self.navigationController.navigationBar.titleTextAttributes = attr;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    // http://blog.csdn.net/gxp1032901/article/details/41879557
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)viewDidLoad {

@@ -24,6 +24,7 @@
         
         _albumType = [UIButton buttonWithType:(UIButtonTypeSystem)];
         _albumType.userInteractionEnabled = NO;
+//        _albumType.tintColor = JMColor(250, 108, 135);
         [self.contentView addSubview:_albumType];
         
         _AlbumSize = [[UILabel alloc] initWithFrame:CGRectZero];

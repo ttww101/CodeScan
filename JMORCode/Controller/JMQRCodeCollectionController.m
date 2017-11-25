@@ -9,7 +9,9 @@
 #import "JMQRCodeCollectionController.h"
 #import "JMQRCodeCollModel.h"
 #import "JMQRCodeCollectionViewCell.h"
+#import "UINavigationBar+Awesome.h"
 
+#import "JMTextInputViewController.h"
 @interface JMQRCodeCollectionController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, weak) UICollectionView *collection;
 @property (nonatomic, strong) NSMutableArray *dataSource;
@@ -18,6 +20,18 @@
 @implementation JMQRCodeCollectionController
 
 static NSString *const oneRowID = @"threeRow";
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    self.navigationController.navigationBar.tintColor = JMColor(41, 41, 41);
+    NSDictionary *attr = @{
+                           NSForegroundColorAttributeName : JMColor(41, 41, 41),
+                           NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
+                           };
+    self.navigationController.navigationBar.titleTextAttributes = attr;
+}
 
 - (NSMutableArray *)dataSource
 {
@@ -29,7 +43,7 @@ static NSString *const oneRowID = @"threeRow";
     
     self.title = @"选取二维码类型";
     
-    NSArray *aray = @[@{@"title":@"文本", @"image":@"text"}, @{@"title":@"邮箱",@"image":@"email"}, @{@"title":@"网址", @"image":@"website"}, @{@"title":@"通讯录", @"image":@"phone"}, @{@"title":@"名片", @"image":@"WiFi"}, @{@"title":@"WiFi", @"image":@"WiFi"}, @{@"title":@"邮箱", @"image":@"email"}, @{@"title":@"短信", @"image":@"mima"}, @{@"title":@"广告", @"image":@"AD"}];
+    NSArray *aray = @[@{@"title":@"文本", @"image":@"text"}, @{@"title":@"邮箱",@"image":@"email"}, @{@"title":@"网址", @"image":@"website"}, @{@"title":@"电话", @"image":@"phone"}, @{@"title":@"名片", @"image":@"namei"}, @{@"title":@"WiFi", @"image":@"WiFi"}, @{@"title":@"地址", @"image":@"local"}, @{@"title":@"密码", @"image":@"mima"}, @{@"title":@"广告", @"image":@"AD"}];
     
     for (NSDictionary *dic in aray) {
         JMQRCodeCollModel *model = [[JMQRCodeCollModel alloc] init];
@@ -42,6 +56,7 @@ static NSString *const oneRowID = @"threeRow";
     collection.backgroundColor = JMTabViewBaseColor;
     collection.dataSource = self;
     collection.delegate = self;
+//    collection.backgroundColor = JMColor(250, 108, 135);
     collection.showsVerticalScrollIndicator = NO;
     [collection registerClass:[JMQRCodeCollectionViewCell class] forCellWithReuseIdentifier:oneRowID];
     [self.view addSubview:collection];
@@ -58,7 +73,8 @@ static NSString *const oneRowID = @"threeRow";
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    JMTextInputViewController *textinput = [JMTextInputViewController new];
+    [self.navigationController pushViewController:textinput animated:YES];
 }
 
 #pragma mark UICollectionViewDataSource,

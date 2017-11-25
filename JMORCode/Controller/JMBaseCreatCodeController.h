@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMScanViewController.h"
+#import "JMSaveCodeViewController.h"
 
 @interface JMBaseCreatCodeController : UIViewController
-
+@property (nonatomic, strong) UIImage *codeImage;
+- (UIImage *)creatQRCodeImage:(NSString *)text;
+- (UIImage *)creatBRCodeImage:(NSString *)text;
 @end

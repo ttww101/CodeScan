@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="792.79999999999995" y="105.69715142428787"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Nav Controller-->
         <scene sceneID="kw2-eq-wEi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pqD-ZE-FfA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pqD-ZE-FfA" customClass="JMMainNavController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpC-Px-a0h">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -257,8 +257,54 @@
             </objects>
             <point key="canvasLocation" x="2148" y="105"/>
         </scene>
+        <!--Save Code View Controller-->
+        <scene sceneID="WEI-cK-Ln1">
+            <objects>
+                <viewController storyboardIdentifier="codeView" id="nzI-Ls-ZNt" customClass="JMSaveCodeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hXd-ys-h64">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCT-8T-WG0">
+                                <rect key="frame" x="82" y="152" width="210" height="211"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weo-1Y-Kw6">
+                                <rect key="frame" x="197" y="398" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="navbar_save_icon_black"/>
+                                <connections>
+                                    <action selector="save:" destination="nzI-Ls-ZNt" eventType="touchUpInside" id="6LR-Kl-HrD"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-9i-gDU">
+                                <rect key="frame" x="82" y="152" width="210" height="211"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGc-nu-tae">
+                                <rect key="frame" x="131" y="398" width="37" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="navbar_share_icon_black"/>
+                                <connections>
+                                    <action selector="share:" destination="nzI-Ls-ZNt" eventType="touchUpInside" id="rb8-fu-RIB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7xY-22-kfv"/>
+                    </view>
+                    <connections>
+                        <outlet property="shareImage" destination="Kfh-9i-gDU" id="vaP-mx-nbh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="INP-2Y-cWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1444" y="781.25937031484261"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="navbar_save_icon_black" width="22" height="22"/>
+        <image name="navbar_share_icon_black" width="22" height="22"/>
         <image name="setting" width="37" height="37"/>
     </resources>
 </document>
