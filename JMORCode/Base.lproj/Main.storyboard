@@ -265,32 +265,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCT-8T-WG0">
-                                <rect key="frame" x="82" y="152" width="210" height="211"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weo-1Y-Kw6">
-                                <rect key="frame" x="197" y="398" width="44" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="navbar_save_icon_black"/>
-                                <connections>
-                                    <action selector="save:" destination="nzI-Ls-ZNt" eventType="touchUpInside" id="6LR-Kl-HrD"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-9i-gDU">
-                                <rect key="frame" x="82" y="152" width="210" height="211"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGc-nu-tae">
-                                <rect key="frame" x="131" y="398" width="37" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGc-nu-tae">
+                                <rect key="frame" x="115.5" y="398" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="L3e-Bt-um8"/>
+                                    <constraint firstAttribute="height" constant="44" id="zsM-Ed-TwF"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="navbar_share_icon_black"/>
                                 <connections>
                                     <action selector="share:" destination="nzI-Ls-ZNt" eventType="touchUpInside" id="rb8-fu-RIB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weo-1Y-Kw6">
+                                <rect key="frame" x="215.5" y="398" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="d0n-Am-1th"/>
+                                    <constraint firstAttribute="width" constant="44" id="zLK-Nc-qOR"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="navbar_save_icon_black"/>
+                                <connections>
+                                    <action selector="save:" destination="nzI-Ls-ZNt" eventType="touchUpInside" id="6LR-Kl-HrD"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-9i-gDU">
+                                <rect key="frame" x="57" y="84" width="260" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="moU-Qt-QHP"/>
+                                    <constraint firstAttribute="height" constant="260" id="pLc-WB-Lrj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eGc-nu-tae" firstAttribute="top" secondItem="Kfh-9i-gDU" secondAttribute="bottom" constant="54" id="0IC-fG-TGG"/>
+                            <constraint firstItem="weo-1Y-Kw6" firstAttribute="top" secondItem="Kfh-9i-gDU" secondAttribute="bottom" constant="54" id="JxJ-dd-hab"/>
+                            <constraint firstItem="Kfh-9i-gDU" firstAttribute="centerX" secondItem="hXd-ys-h64" secondAttribute="centerX" id="VW7-CX-hUb"/>
+                            <constraint firstItem="weo-1Y-Kw6" firstAttribute="centerX" secondItem="hXd-ys-h64" secondAttribute="centerX" constant="50" id="WlN-GG-Z2G"/>
+                            <constraint firstItem="Kfh-9i-gDU" firstAttribute="top" secondItem="7xY-22-kfv" secondAttribute="top" constant="64" id="YUf-v4-dHL"/>
+                            <constraint firstItem="eGc-nu-tae" firstAttribute="centerX" secondItem="hXd-ys-h64" secondAttribute="centerX" constant="-50" id="anP-v8-Vqf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7xY-22-kfv"/>
                     </view>
                     <connections>

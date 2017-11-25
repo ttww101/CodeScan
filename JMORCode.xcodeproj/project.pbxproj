@@ -53,6 +53,10 @@
 		A2AECCE51FC911DF0020F2F0 /* JMTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCE41FC911DF0020F2F0 /* JMTextInputViewController.m */; };
 		A2AECCE81FC914D40020F2F0 /* JMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCE71FC914D40020F2F0 /* JMTextView.m */; };
 		A2AECCEB1FC920FF0020F2F0 /* JMSaveCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCEA1FC920FF0020F2F0 /* JMSaveCodeViewController.m */; };
+		A2AECCEE1FC948860020F2F0 /* JMNumberInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCED1FC948860020F2F0 /* JMNumberInputViewController.m */; };
+		A2AECCF11FC956700020F2F0 /* JMEmailInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCF01FC956700020F2F0 /* JMEmailInputViewController.m */; };
+		A2AECCF41FC95D0A0020F2F0 /* JMNameInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCF31FC95D0A0020F2F0 /* JMNameInputViewController.m */; };
+		A2AECCF71FC96D010020F2F0 /* JMBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AECCF61FC96D010020F2F0 /* JMBarCodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +162,14 @@
 		A2AECCE71FC914D40020F2F0 /* JMTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMTextView.m; sourceTree = "<group>"; };
 		A2AECCE91FC920FF0020F2F0 /* JMSaveCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSaveCodeViewController.h; sourceTree = "<group>"; };
 		A2AECCEA1FC920FF0020F2F0 /* JMSaveCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSaveCodeViewController.m; sourceTree = "<group>"; };
+		A2AECCEC1FC948860020F2F0 /* JMNumberInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMNumberInputViewController.h; sourceTree = "<group>"; };
+		A2AECCED1FC948860020F2F0 /* JMNumberInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMNumberInputViewController.m; sourceTree = "<group>"; };
+		A2AECCEF1FC956700020F2F0 /* JMEmailInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMEmailInputViewController.h; sourceTree = "<group>"; };
+		A2AECCF01FC956700020F2F0 /* JMEmailInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMEmailInputViewController.m; sourceTree = "<group>"; };
+		A2AECCF21FC95D0A0020F2F0 /* JMNameInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMNameInputViewController.h; sourceTree = "<group>"; };
+		A2AECCF31FC95D0A0020F2F0 /* JMNameInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMNameInputViewController.m; sourceTree = "<group>"; };
+		A2AECCF51FC96D010020F2F0 /* JMBarCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMBarCodeViewController.h; sourceTree = "<group>"; };
+		A2AECCF61FC96D010020F2F0 /* JMBarCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMBarCodeViewController.m; sourceTree = "<group>"; };
 		EEF3D5204CAB1408BCDF38C3 /* Pods-JMORCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMORCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-JMORCode/Pods-JMORCode.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,6 +310,8 @@
 				0438E6D11FC80D320030255D /* JMBaseCreatCodeController.m */,
 				A2AECCDD1FC8FF740020F2F0 /* JMMainNavController.h */,
 				A2AECCDC1FC8FF740020F2F0 /* JMMainNavController.m */,
+				A2AECCF51FC96D010020F2F0 /* JMBarCodeViewController.h */,
+				A2AECCF61FC96D010020F2F0 /* JMBarCodeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -379,6 +393,12 @@
 			children = (
 				A2AECCE31FC911DF0020F2F0 /* JMTextInputViewController.h */,
 				A2AECCE41FC911DF0020F2F0 /* JMTextInputViewController.m */,
+				A2AECCEC1FC948860020F2F0 /* JMNumberInputViewController.h */,
+				A2AECCED1FC948860020F2F0 /* JMNumberInputViewController.m */,
+				A2AECCEF1FC956700020F2F0 /* JMEmailInputViewController.h */,
+				A2AECCF01FC956700020F2F0 /* JMEmailInputViewController.m */,
+				A2AECCF21FC95D0A0020F2F0 /* JMNameInputViewController.h */,
+				A2AECCF31FC95D0A0020F2F0 /* JMNameInputViewController.m */,
 				A2AECCE61FC914D40020F2F0 /* JMTextView.h */,
 				A2AECCE71FC914D40020F2F0 /* JMTextView.m */,
 				A2AECCE91FC920FF0020F2F0 /* JMSaveCodeViewController.h */,
@@ -549,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B67C1E1FC5351C006C943E /* UINavigationBar+Awesome.m in Sources */,
+				A2AECCF71FC96D010020F2F0 /* JMBarCodeViewController.m in Sources */,
 				A2AECCEB1FC920FF0020F2F0 /* JMSaveCodeViewController.m in Sources */,
 				04B67C061FC4346C006C943E /* MMScanViewController.m in Sources */,
 				04B67C0F1FC43744006C943E /* JMDrawQrCoderController.m in Sources */,
@@ -561,8 +582,10 @@
 				04B67C0C1FC4371E006C943E /* JMDrawBarCoderController.m in Sources */,
 				0438E69F1FC6D17A0030255D /* FLAnimatedImage.m in Sources */,
 				04B67C271FC535E2006C943E /* AppDelegate.m in Sources */,
+				A2AECCF41FC95D0A0020F2F0 /* JMNameInputViewController.m in Sources */,
 				0438E6CF1FC7FF810030255D /* JMQRCodeCollectionViewCell.m in Sources */,
 				04B67C311FC54B3E006C943E /* JMPhotosAlertView.m in Sources */,
+				A2AECCEE1FC948860020F2F0 /* JMNumberInputViewController.m in Sources */,
 				A2AECCE51FC911DF0020F2F0 /* JMTextInputViewController.m in Sources */,
 				04B67C341FC55251006C943E /* JMAboutUsController.m in Sources */,
 				0438E6961FC6A9100030255D /* HFParticleSearchAnimateView.m in Sources */,
@@ -576,6 +599,7 @@
 				0438E6D21FC80D320030255D /* JMBaseCreatCodeController.m in Sources */,
 				04B67C4F1FC566F8006C943E /* JMADView.m in Sources */,
 				A2AECCE81FC914D40020F2F0 /* JMTextView.m in Sources */,
+				A2AECCF11FC956700020F2F0 /* JMEmailInputViewController.m in Sources */,
 				04B67BDD1FC42DA9006C943E /* main.m in Sources */,
 				0438E6C91FC7FE4F0030255D /* JMQRCodeCollectionController.m in Sources */,
 				0438E6CC1FC7FF670030255D /* JMQRCodeCollModel.m in Sources */,

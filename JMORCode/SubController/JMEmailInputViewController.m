@@ -1,24 +1,36 @@
 //
-//  JMTextInputViewController.m
+//  JMEmailInputViewController.m
 //  JMORCode
 //
 //  Created by 赵俊明 on 2017/11/25.
 //  Copyright © 2017年 JunMing. All rights reserved.
 //
 
-#import "JMTextInputViewController.h"
+#import "JMEmailInputViewController.h"
 #import "JMTextView.h"
 
-@interface JMTextInputViewController ()<UITextViewDelegate>
+@interface JMEmailInputViewController ()<UITextFieldDelegate, UITextViewDelegate>
 @property (nonatomic, weak) JMTextView *editerView;
+@property (nonatomic, weak) UITextField *content;
 @end
 
-@implementation JMTextInputViewController
+@implementation JMEmailInputViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    JMTextView *textView = [[JMTextView alloc] initWithFrame:CGRectMake(0, 84, kW, 200)];
+    UITextField *content = [[UITextField alloc] initWithFrame:CGRectMake(0, 74, kW, 40)];
+    content.delegate = self;
+    content.layer.cornerRadius = 5;
+    content.layer.masksToBounds = YES;
+    content.clearButtonMode = UITextFieldViewModeWhileEditing;
+    content.keyboardType = UIKeyboardTypeNumberPad;
+    content.backgroundColor = [UIColor whiteColor];
+    content.placeholder = self.playholder;
+    [self.view addSubview:content];
+    self.content = content;
+    
+    JMTextView *textView = [[JMTextView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(content.frame)+10, kW, 200)];
     textView.playholed.text = self.playholder;
     textView.delegate = (id)self;
     textView.font = [UIFont fontWithName:@"Arial" size:16.5f];
@@ -29,27 +41,26 @@
     [self.view addSubview:textView];
     self.editerView = textView;
     
-    [textView becomeFirstResponder];
+    [content becomeFirstResponder];
 }
 
 - (void)creatExe:(UIBarButtonItem *)item
 {
-    self.endString = _editerView.text.length>120?[_editerView.text substringWithRange:NSMakeRange(0, 120)]:_editerView.text;
+    NSString *string = _editerView.text.length>120?[_content.text substringWithRange:NSMakeRange(0, 120)]:_editerView.text;
+    self.endString = [NSString stringWithFormat:@"%@&&%@", _content.text, string];
     if (self.endString>0) {
         
-        UIImage *image = [self creatQRCodeImage:self.endString];
         UIStoryboard *store = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         JMSaveCodeViewController *save = [store instantiateViewControllerWithIdentifier:@"codeView"];
-        save.image = image;
+        save.image = [self creatQRCodeImage:self.endString];
         [self.navigationController pushViewController:save animated:YES];
     }
 }
 
-// UITextFieldDelegate
-- (void)textViewDidEndEditing:(UITextView *)textView
+- (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    self.endString = _editerView.text.length>120?[textView.text substringWithRange:NSMakeRange(0, 120)]:_editerView.text;
-    NSLog(@"end-%@", self.endString);
+    NSString *string = _editerView.text.length>120?[textField.text substringWithRange:NSMakeRange(0, 120)]:_editerView.text;
+    self.endString = [NSString stringWithFormat:@"%@&&%@", _content.text, string];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text

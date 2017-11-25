@@ -34,7 +34,6 @@
     [self shareToFriends];
 }
 
-
 - (IBAction)save:(id)sender {
     
     UIImageWriteToSavedPhotosAlbum(_image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);

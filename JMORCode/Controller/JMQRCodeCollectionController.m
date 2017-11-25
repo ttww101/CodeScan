@@ -9,7 +9,9 @@
 #import "JMQRCodeCollectionController.h"
 #import "JMQRCodeCollModel.h"
 #import "JMQRCodeCollectionViewCell.h"
+#import "JMNumberInputViewController.h"
 #import "UINavigationBar+Awesome.h"
+#import "JMEmailInputViewController.h"
 
 #import "JMTextInputViewController.h"
 @interface JMQRCodeCollectionController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -41,8 +43,7 @@ static NSString *const oneRowID = @"threeRow";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"选取二维码类型";
-    
+    self.title = @"二维码";
     NSArray *aray = @[@{@"title":@"文本", @"image":@"text"}, @{@"title":@"邮箱",@"image":@"email"}, @{@"title":@"网址", @"image":@"website"}, @{@"title":@"电话", @"image":@"phone"}, @{@"title":@"名片", @"image":@"namei"}, @{@"title":@"WiFi", @"image":@"WiFi"}, @{@"title":@"地址", @"image":@"local"}, @{@"title":@"密码", @"image":@"mima"}, @{@"title":@"广告", @"image":@"AD"}];
     
     for (NSDictionary *dic in aray) {
@@ -73,8 +74,67 @@ static NSString *const oneRowID = @"threeRow";
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    JMTextInputViewController *textinput = [JMTextInputViewController new];
-    [self.navigationController pushViewController:textinput animated:YES];
+    if (indexPath.row == 0) {
+     
+        JMTextInputViewController *textinput = [JMTextInputViewController new];
+        textinput.title = @"文本";
+        textinput.playholder = @"输入文本内容...";
+        [self.navigationController pushViewController:textinput animated:YES];
+    
+    }else if (indexPath.row == 1){
+        
+        JMEmailInputViewController *textinput = [JMEmailInputViewController new];
+        textinput.title = @"邮箱";
+        textinput.playholder = @"输入邮箱...";
+        [self.navigationController pushViewController:textinput animated:YES];
+        
+    }else if (indexPath.row == 2){
+     
+        JMTextInputViewController *textinput = [JMTextInputViewController new];
+        textinput.title = @"网址";
+        textinput.playholder = @"输入网址...";
+        [self.navigationController pushViewController:textinput animated:YES];
+        
+    }else if (indexPath.row == 3){
+        
+        JMNumberInputViewController *textinput = [JMNumberInputViewController new];
+        textinput.title = @"电话";
+        textinput.playholder = @"输入电话号码...";
+        [self.navigationController pushViewController:textinput animated:YES];
+        
+    }else if (indexPath.row == 4){
+        
+        JMNumberInputViewController *textinput = [JMNumberInputViewController new];
+        textinput.title = @"名片";
+        textinput.playholder = @"输入名片...";
+        [self.navigationController pushViewController:textinput animated:YES];
+        
+    }else if (indexPath.row == 5){
+        
+        JMNumberInputViewController *textinput = [JMNumberInputViewController new];
+        textinput.title = @"Wi-Fi";
+        textinput.playholder = @"输入Wi-Fi密码...";
+        [self.navigationController pushViewController:textinput animated:YES];
+        
+    }else if (indexPath.row == 6){
+        
+        JMNumberInputViewController *textinput = [JMNumberInputViewController new];
+        textinput.title = @"地址";
+        textinput.playholder = @"输入地址...";
+        [self.navigationController pushViewController:textinput animated:YES];
+        
+    }else if (indexPath.row == 7){
+        
+        JMNumberInputViewController *textinput = [JMNumberInputViewController new];
+        textinput.title = @"密码";
+        textinput.playholder = @"输入密码...";
+        [self.navigationController pushViewController:textinput animated:YES];
+        
+    }else if (indexPath.row == 8){
+        
+        
+        
+    }
 }
 
 #pragma mark UICollectionViewDataSource,

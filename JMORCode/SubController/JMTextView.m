@@ -11,7 +11,6 @@
 @interface JMTextView()
 @property (nonatomic, weak) UIButton *btn;
 @property (nonatomic, weak) UILabel *number;
-@property (nonatomic, weak) UILabel *playholed;
 @end
 
 @implementation JMTextView
@@ -22,7 +21,7 @@
     if (self) {
         
         UILabel *playholed = [[UILabel alloc] initWithFrame:CGRectZero];
-        playholed.text = @"请输入文本内容";
+//        playholed.text = @"请输入文本内容";
         playholed.textColor = [UIColor grayColor];
         [self addSubview:playholed];
         self.playholed = playholed;

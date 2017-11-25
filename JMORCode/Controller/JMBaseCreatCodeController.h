@@ -12,6 +12,8 @@
 
 @interface JMBaseCreatCodeController : UIViewController
 @property (nonatomic, strong) UIImage *codeImage;
+@property (nonatomic, copy) NSString *playholder;
+@property (nonatomic, copy) NSString *endString;
 - (UIImage *)creatQRCodeImage:(NSString *)text;
 - (UIImage *)creatBRCodeImage:(NSString *)text;
 @end

@@ -17,6 +17,7 @@
 #import "FLAnimatedImageView.h"
 #import "FLAnimatedImage.h"
 #import "JMQRCodeCollectionController.h"
+#import "JMBarCodeViewController.h"
 
 @import GoogleMobileAds;
 static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
@@ -104,13 +105,11 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
         JMQRCodeCollectionController *qrCode = [[JMQRCodeCollectionController alloc] init];
         [self.navigationController pushViewController:qrCode animated:YES];
         
-//        JMDrawQrCoderController *drawQrVC = [self.storyboard instantiateViewControllerWithIdentifier:@"drawQr"];
-//        [self.navigationController pushViewController:drawQrVC animated:YES];
-    
     } else if (type == 4) {
         
-        JMDrawBarCoderController *drawBarVC = [self.storyboard instantiateViewControllerWithIdentifier:@"drawBar"];
+        JMBarCodeViewController *drawBarVC = [[JMBarCodeViewController alloc] init];
         [self.navigationController pushViewController:drawBarVC animated:YES];
+        
     }else{
         
         [self createAndLoadInterstitial];

@@ -10,4 +10,5 @@
 
 @interface JMTextView : UITextView
 @property (nonatomic, copy) NSString *content;
+@property (nonatomic, weak) UILabel *playholed;
 @end
