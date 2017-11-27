@@ -35,7 +35,7 @@
 #define iOS7AddStatusHeight     (IOS7?20:0)
 #define D_LocalizedCardString(s) [[NSBundle mainBundle] localizedStringForKey:s value:nil table:@"CardToolLanguage"]
 #define D_Main_Appdelegate (AppDelegate *)[UIApplication sharedApplication].delegate
-#define AppiTunesID_Sketchpad @"https://itunes.apple.com/cn/app/Sketchpad-Pro/id1286373829?mt=8"
+#define AppiTunesID_ScanCode @"https://itunes.apple.com/cn/app/ScanCode-QR/id1316841712?mt=8"
 #define AppiTunesID_ebookReader @"https://itunes.apple.com/cn/app/ebookreader/id1269413156?mt=8"
 
 // @"[^"]*[\u4E00-\u9FA5]+[^"\n]*?"

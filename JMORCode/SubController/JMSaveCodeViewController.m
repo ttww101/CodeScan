@@ -33,12 +33,14 @@
 
 - (IBAction)share:(id)sender {
     
+    [MobClick event:@"masterboard_home_share"];
     [self shareToFriends];
 }
 
 - (IBAction)save:(id)sender {
     
     // 初始化广告
+    [MobClick event:@"masterboard_home_save"];
     [self createAndLoadInterstitial];
     UIImageWriteToSavedPhotosAlbum(_image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
 }
@@ -65,6 +67,7 @@
         
         if (self.interstitial.isReady) {
             
+            [MobClick event:@"scanCodeADShow"];
             [self.interstitial presentFromRootViewController:self];
         }
     }];
@@ -120,7 +123,7 @@
     GADRequest *request = [GADRequest request];
     // Request test ads on devices you specify. Your test device ID is printed to the console when
     // an ad request is made.
-    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+//    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
     [self.interstitial loadRequest:request];
 }
 

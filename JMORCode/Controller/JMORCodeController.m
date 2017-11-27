@@ -20,7 +20,6 @@
 #import "JMBarCodeViewController.h"
 
 @import GoogleMobileAds;
-static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 @interface JMORCodeController ()<GADNativeExpressAdViewDelegate, GADVideoControllerDelegate, GADInterstitialDelegate>
 @property (strong, nonatomic) JMADView *adView;
 @property (strong, nonatomic) IBOutlet JMPuzzleMenuView *menuView;
@@ -42,10 +41,14 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
                            };
     self.navigationController.navigationBar.titleTextAttributes = attr;
     
-    int x = [self getRandomNumber:0 to:3];
+    int x = [self getRandomNumber:0 to:2];
     if (x == 1) {
     
-        if (self.interstitial.isReady) {[self.interstitial presentFromRootViewController:self];}
+        if (self.interstitial.isReady) {
+            
+            [MobClick event:@"scanCodeADShow"];
+            [self.interstitial presentFromRootViewController:self];
+        }
     }
 }
 
@@ -72,7 +75,15 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
     JMSelf(ws);
     self.menuView.didSelectBlock = ^(NSInteger type) {[ws chouseORCode:type];};
     self.title = NSLocalizedString(@"orscan.items.scan", "");
+    
+    // 原生广告
     [self setupAd];
+    
+    self.particleView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0, 84, kW, kW*0.75)];
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"loadings" ofType:@"gif"];
+    FLAnimatedImage *image = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:file]];
+    self.particleView.animatedImage = image;
+    [self.view addSubview:self.particleView];
 }
 
 - (IBAction)orcodeSetting:(id)sender {
@@ -86,6 +97,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
     [self createAndLoadInterstitial];
     
     if (type == 0) {
+        [MobClick event:@"scanCodeQRAdnBarSacn"];
         MMScanViewController *scanVc = [[MMScanViewController alloc] initWithQrType:MMScanTypeAll onFinish:^(NSString *result, NSError *error) {
             if (error) {
                 NSLog(@"error: %@",error);
@@ -98,6 +110,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
         }];
         [self.navigationController pushViewController:scanVc animated:YES];
     } else if (type == 1) {
+        [MobClick event:@"scanCodeQRSacn"];
         MMScanViewController *scanVc = [[MMScanViewController alloc] initWithQrType:MMScanTypeQrCode onFinish:^(NSString *result, NSError *error) {
             if (error) {
                 NSLog(@"error: %@",error);
@@ -108,6 +121,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
         }];
         [self.navigationController pushViewController:scanVc animated:YES];
     } else if (type== 2) {
+        [MobClick event:@"scanCodeBarSacn"];
         MMScanViewController *scanVc = [[MMScanViewController alloc] initWithQrType:MMScanTypeBarCode onFinish:^(NSString *result, NSError *error) {
             if (error) {
                 NSLog(@"error: %@",error);
@@ -118,16 +132,16 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
         }];
         [self.navigationController pushViewController:scanVc animated:YES];
     } else if (type == 3) {
-        
+        [MobClick event:@"scanCodeQRCreat"];
         JMQRCodeCollectionController *qrCode = [[JMQRCodeCollectionController alloc] init];
         [self.navigationController pushViewController:qrCode animated:YES];
         
     } else if (type == 4) {
-        
+        [MobClick event:@"scanCodeBarCreat"];
         JMBarCodeViewController *drawBarVC = [[JMBarCodeViewController alloc] init];
         [self.navigationController pushViewController:drawBarVC animated:YES]; 
     }else{
-        
+        [MobClick event:@"scanCodeADShow"];
         [self createAndLoadInterstitial];
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
@@ -136,7 +150,11 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [hud hideAnimated:YES];
-                if (self.interstitial.isReady) {[self.interstitial presentFromRootViewController:self];}
+                if (self.interstitial.isReady) {
+                    
+                    [MobClick event:@"scanCodeADShow"];
+                    [self.interstitial presentFromRootViewController:self];
+                }
             });
         });
     }
@@ -179,7 +197,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 #pragma mark -- 初始化广告
 - (void)setupAd
 {
-    self.googleAdView.adUnitID = AdUnitId;
+    self.googleAdView.adUnitID = GoogleUtiID_origin;
     self.googleAdView.rootViewController = self;
     self.googleAdView.delegate = self;
     
@@ -194,14 +212,8 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
     self.googleAdView.videoController.delegate = self;
     
     GADRequest *request = [GADRequest request];
-    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+//    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
     [self.googleAdView loadRequest:request];
-    
-    self.particleView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0, 84, kW, kW*0.75)];
-    NSString *file = [[NSBundle mainBundle] pathForResource:@"loadings" ofType:@"gif"];
-    FLAnimatedImage *image = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:file]];
-    self.particleView.animatedImage = image;
-    [self.view addSubview:self.particleView];
 }
 
 #pragma mark - GADadViewDelegate
@@ -237,7 +249,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
     GADRequest *request = [GADRequest request];
     // Request test ads on devices you specify. Your test device ID is printed to the console when
     // an ad request is made.
-    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+//    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
     [self.interstitial loadRequest:request];
 }
 

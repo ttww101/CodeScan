@@ -97,20 +97,20 @@
 {
     if (indexPath.section ==0 && indexPath.row == 0) {
         
-//        [MobClick event:@"masterboard_set_callback"];
+        [MobClick event:@"masterboard_set_callback"];
         [self customerFeedback];
         
     }else if (indexPath.section ==0 && indexPath.row == 1){
     
-//        [MobClick event:@"masterboard_set_comment"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AppiTunesID_Sketchpad]];
+        [MobClick event:@"masterboard_set_comment"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AppiTunesID_ScanCode]];
         
     }else if (indexPath.section ==0 && indexPath.row == 2){
         
-//        [MobClick event:@"masterboard_set_share"];
+        [MobClick event:@"masterboard_set_share"];
         NSMutableArray *items = [[NSMutableArray alloc] init];
-        [items addObject:@"Sketchpad-Pro"];
-        [items addObject:[NSURL URLWithString:AppiTunesID_Sketchpad]];
+        [items addObject:@"ScanCode"];
+        [items addObject:[NSURL URLWithString:AppiTunesID_ScanCode]];
         
         UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
         NSMutableArray *excludedActivityTypes =  [NSMutableArray arrayWithArray:@[UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypeMail, UIActivityTypePostToTencentWeibo, UIActivityTypeSaveToCameraRoll, UIActivityTypeMessage, UIActivityTypePostToTwitter]];
@@ -123,7 +123,7 @@
 
     }else if (indexPath.section ==1 && indexPath.row == 0){
         
-//        [MobClick event:@"masterboard_set_one"];
+        [MobClick event:@"masterboard_set_one"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AppiTunesID_ebookReader]];
         
     }

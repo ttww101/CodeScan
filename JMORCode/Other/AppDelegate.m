@@ -15,16 +15,15 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 友盟统计
-    UMConfigInstance.appKey = @"59915671310c930dc0001bc9";
+    UMConfigInstance.appKey = @"5a1b966ef43e4806190002f4";
     UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
     
     // Initialize Google Mobile Ads SDK
-    [GADMobileAds configureWithApplicationID:@"ca-app-pub-3940256099942544~1458002511"];
+    [GADMobileAds configureWithApplicationID:GoogleAppID];
 
     return YES;
 }

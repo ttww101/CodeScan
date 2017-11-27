@@ -77,6 +77,8 @@ static NSString *const oneRowID = @"threeRow";
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *str = [NSString stringWithFormat:@"scanCodeCreat_%ld", indexPath.row+1];
+    [MobClick event:str];
     if (indexPath.row == 0) {
      
         JMTextInputViewController *textinput = [JMTextInputViewController new];
@@ -157,7 +159,7 @@ static NSString *const oneRowID = @"threeRow";
     GADRequest *request = [GADRequest request];
     // Request test ads on devices you specify. Your test device ID is printed to the console when
     // an ad request is made.
-    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+//    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
     [self.interstitial loadRequest:request];
 }
 
