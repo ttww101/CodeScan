@@ -58,7 +58,7 @@
     
     appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
     if (appName == nil || appName.length == 0) {
-        appName = @"该App";
+        appName = @"This App";
     }
     
     

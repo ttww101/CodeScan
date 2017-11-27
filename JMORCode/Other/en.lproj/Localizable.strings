@@ -66,3 +66,30 @@
 "orscan.items.scanCreatCodeFrist" = "GenerateBarcodeFrist";
 "orscan.items.scanAlbum" = "Album";
 
+"orscan.items.scanCreatCodeText" = "Text";
+"orscan.items.scanCreatCodeEmail" = "Email";
+"orscan.items.scanCreatCodeWebSite" = "Web";
+"orscan.items.scanCreatCodePhoneNumber" = "PhoneNumber";
+"orscan.items.scanCreatCodeNameDis" = "BusinessCard";
+"orscan.items.scanCreatCodePwd" = "Pwd";
+"orscan.items.scanCreatCodeWIFI" = "WIFI";
+"orscan.items.scanCreatCodeLocalN" = "Address";
+"orscan.items.scanCreatCodeInputText" = "EnterText...";
+"orscan.items.scanCreatCodeInputEmail" = "EnterEmail...";
+"orscan.items.scanCreatCodeInputWebSite" = "EnterWeb...";
+"orscan.items.scanCreatCodeInputPhoneNumber" = "EnterPhoneNumber...";
+"orscan.items.scanCreatCodeInputNameDis" = "EnterBusinessCard...";
+"orscan.items.scanCreatCodeInputWifiPwd" = "Enter WiFi Number...";
+"orscan.items.scanCreatCodeInputLocalN" = "EnterAddress...";
+"orscan.items.scanCreatCodeInputPwd" = "Enter Number...";
+"orscan.items.scanCreatCodeInputNumbers" = "Enter Number...";
+"orscan.items.scanCreatCodeCreat" = "Generate";
+
+
+
+
+
+
+
+
+

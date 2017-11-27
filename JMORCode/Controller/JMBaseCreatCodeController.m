@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:@"生成" style:(UIBarButtonItemStyleDone) target:self action:@selector(creatExe:)];
+    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"orscan.items.scanCreatCodeCreat", "") style:(UIBarButtonItemStyleDone) target:self action:@selector(creatExe:)];
     self.navigationItem.rightBarButtonItem = right;
     self.view.backgroundColor = JMColor(240, 240, 240);
 }

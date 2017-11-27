@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"条形码";
+    self.title = NSLocalizedString(@"orscan.items.BarCode", "");
     UITextField *editerView = [[UITextField alloc] initWithFrame:CGRectMake(0, 84, kW, 44)];
     editerView.delegate = self;
     editerView.layer.cornerRadius = 5;
@@ -37,7 +37,7 @@
     editerView.clearButtonMode = UITextFieldViewModeWhileEditing;
     editerView.keyboardType = UIKeyboardTypeNumberPad;
     editerView.backgroundColor = [UIColor whiteColor];
-    editerView.placeholder = @"输入数字...";
+    editerView.placeholder = NSLocalizedString(@"orscan.items.scanInputNumber", "");
     [self.view addSubview:editerView];
     self.editerView = editerView;
     

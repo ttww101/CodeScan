@@ -41,6 +41,23 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
                            NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
                            };
     self.navigationController.navigationBar.titleTextAttributes = attr;
+    
+    int x = [self getRandomNumber:0 to:3];
+    if (x == 1) {
+    
+        if (self.interstitial.isReady) {[self.interstitial presentFromRootViewController:self];}
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self createAndLoadInterstitial];
+}
+
+- (int)getRandomNumber:(int)from to:(int)to
+{
+    return (int)(from + (arc4random() % (to-from+1)));
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -108,8 +125,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
     } else if (type == 4) {
         
         JMBarCodeViewController *drawBarVC = [[JMBarCodeViewController alloc] init];
-        [self.navigationController pushViewController:drawBarVC animated:YES];
-        
+        [self.navigationController pushViewController:drawBarVC animated:YES]; 
     }else{
         
         [self createAndLoadInterstitial];
@@ -123,7 +139,6 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
                 if (self.interstitial.isReady) {[self.interstitial presentFromRootViewController:self];}
             });
         });
-
     }
 }
 
@@ -217,7 +232,7 @@ static NSString *const AdUnitId = @"ca-app-pub-3940256099942544/8897359316";
 // 插页广告
 - (void)createAndLoadInterstitial {
     
-    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@""];
+    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:GoogleUtiID_pageInsert];
     self.interstitial.delegate = self;
     GADRequest *request = [GADRequest request];
     // Request test ads on devices you specify. Your test device ID is printed to the console when

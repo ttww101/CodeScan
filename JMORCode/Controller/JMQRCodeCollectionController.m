@@ -12,9 +12,11 @@
 #import "JMNumberInputViewController.h"
 #import "UINavigationBar+Awesome.h"
 #import "JMEmailInputViewController.h"
-
 #import "JMTextInputViewController.h"
+
+@import GoogleMobileAds;
 @interface JMQRCodeCollectionController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, strong) GADInterstitial *interstitial;
 @property (nonatomic, weak) UICollectionView *collection;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @end
@@ -42,9 +44,10 @@ static NSString *const oneRowID = @"threeRow";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"二维码";
-    NSArray *aray = @[@{@"title":@"文本", @"image":@"text"}, @{@"title":@"邮箱",@"image":@"email"}, @{@"title":@"网址", @"image":@"website"}, @{@"title":@"电话", @"image":@"phone"}, @{@"title":@"名片", @"image":@"namei"}, @{@"title":@"WiFi", @"image":@"WiFi"}, @{@"title":@"地址", @"image":@"local"}, @{@"title":@"密码", @"image":@"mima"}, @{@"title":@"广告", @"image":@"AD"}];
+
+    self.title = NSLocalizedString(@"orscan.items.ORCode", "");
+    NSArray *aray = @[@{@"title":NSLocalizedString(@"orscan.items.scanCreatCodeText", ""), @"image":@"text"}, @{@"title":NSLocalizedString(@"orscan.items.scanCreatCodeEmail", ""),@"image":@"email"}, @{@"title":NSLocalizedString(@"orscan.items.scanCreatCodeWebSite", ""), @"image":@"website"}, @{@"title":NSLocalizedString(@"orscan.items.scanCreatCodePhoneNumber", ""), @"image":@"phone"}, @{@"title":NSLocalizedString(@"orscan.items.scanCreatCodeNameDis", ""), @"image":@"namei"}, @{@"title":NSLocalizedString(@"orscan.items.scanCreatCodeWIFI", ""), @"image":@"WiFi"}, @{@"title":NSLocalizedString(@"orscan.items.scanCreatCodeLocalN", ""), @"image":@"local"}, @{@"title":NSLocalizedString(@"orscan.items.scanCreatCodePwd", ""), @"image":@"mima"},
+                      @{@"title":NSLocalizedString(@"orscan.items.scanAD", ""), @"image":@"AD"}];
     
     for (NSDictionary *dic in aray) {
         JMQRCodeCollModel *model = [[JMQRCodeCollModel alloc] init];
@@ -77,64 +80,85 @@ static NSString *const oneRowID = @"threeRow";
     if (indexPath.row == 0) {
      
         JMTextInputViewController *textinput = [JMTextInputViewController new];
-        textinput.title = @"文本";
-        textinput.playholder = @"输入文本内容...";
+        textinput.title = NSLocalizedString(@"orscan.items.scanCreatCodeText", "");
+        textinput.playholder = NSLocalizedString(@"orscan.items.scanCreatCodeInputText", "");
         [self.navigationController pushViewController:textinput animated:YES];
     
     }else if (indexPath.row == 1){
         
         JMEmailInputViewController *textinput = [JMEmailInputViewController new];
-        textinput.title = @"邮箱";
-        textinput.playholder = @"输入邮箱...";
+        textinput.title = NSLocalizedString(@"orscan.items.scanCreatCodeEmail", "");
+        textinput.playholder = NSLocalizedString(@"orscan.items.scanCreatCodeInputEmail", "");
         [self.navigationController pushViewController:textinput animated:YES];
         
     }else if (indexPath.row == 2){
      
         JMTextInputViewController *textinput = [JMTextInputViewController new];
-        textinput.title = @"网址";
-        textinput.playholder = @"输入网址...";
+        textinput.title = NSLocalizedString(@"orscan.items.scanCreatCodeWebSite", "");
+        textinput.playholder = NSLocalizedString(@"orscan.items.scanCreatCodeInputWebSite", "");
         [self.navigationController pushViewController:textinput animated:YES];
         
     }else if (indexPath.row == 3){
         
         JMNumberInputViewController *textinput = [JMNumberInputViewController new];
-        textinput.title = @"电话";
-        textinput.playholder = @"输入电话号码...";
+        textinput.title = NSLocalizedString(@"orscan.items.scanCreatCodePhoneNumber", "");
+        textinput.playholder = NSLocalizedString(@"orscan.items.scanCreatCodeInputPhoneNumber", "");
         [self.navigationController pushViewController:textinput animated:YES];
         
     }else if (indexPath.row == 4){
         
         JMNumberInputViewController *textinput = [JMNumberInputViewController new];
-        textinput.title = @"名片";
-        textinput.playholder = @"输入名片...";
+        textinput.title = NSLocalizedString(@"orscan.items.scanCreatCodeNameDis", "");
+        textinput.playholder = NSLocalizedString(@"orscan.items.scanCreatCodeInputNameDis", "");
         [self.navigationController pushViewController:textinput animated:YES];
         
     }else if (indexPath.row == 5){
         
         JMNumberInputViewController *textinput = [JMNumberInputViewController new];
-        textinput.title = @"Wi-Fi";
-        textinput.playholder = @"输入Wi-Fi密码...";
+        textinput.title = NSLocalizedString(@"orscan.items.scanCreatCodeWIFI", "");
+        textinput.playholder = NSLocalizedString(@"orscan.items.scanCreatCodeInputWifiPwd", "");
         [self.navigationController pushViewController:textinput animated:YES];
         
     }else if (indexPath.row == 6){
         
         JMNumberInputViewController *textinput = [JMNumberInputViewController new];
-        textinput.title = @"地址";
-        textinput.playholder = @"输入地址...";
+        textinput.title = NSLocalizedString(@"orscan.items.scanCreatCodeLocalN", "");
+        textinput.playholder = NSLocalizedString(@"orscan.items.scanCreatCodeInputLocalN", "");
         [self.navigationController pushViewController:textinput animated:YES];
         
     }else if (indexPath.row == 7){
         
         JMNumberInputViewController *textinput = [JMNumberInputViewController new];
-        textinput.title = @"密码";
-        textinput.playholder = @"输入密码...";
+        textinput.title = NSLocalizedString(@"orscan.items.scanCreatCodePwd", "");
+        textinput.playholder = NSLocalizedString(@"orscan.items.scanCreatCodeInputPwd", "");
         [self.navigationController pushViewController:textinput animated:YES];
         
     }else if (indexPath.row == 8){
         
-        
-        
+        // 初始化广告
+        [self createAndLoadInterstitial];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+            
+            sleep(1);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [hud hideAnimated:YES];
+                if (self.interstitial.isReady) {[self.interstitial presentFromRootViewController:self];}
+            });
+        });
     }
+}
+
+// 插页广告
+- (void)createAndLoadInterstitial {
+    
+    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:GoogleUtiID_pageInsert];
+    GADRequest *request = [GADRequest request];
+    // Request test ads on devices you specify. Your test device ID is printed to the console when
+    // an ad request is made.
+    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+    [self.interstitial loadRequest:request];
 }
 
 #pragma mark UICollectionViewDataSource,

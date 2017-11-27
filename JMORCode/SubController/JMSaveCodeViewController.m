@@ -8,7 +8,9 @@
 
 #import "JMSaveCodeViewController.h"
 
+@import GoogleMobileAds;
 @interface JMSaveCodeViewController ()
+@property (nonatomic, strong) GADInterstitial *interstitial;
 @property (weak, nonatomic) IBOutlet UIImageView *shareImage;
 @end
 
@@ -20,7 +22,7 @@
     _shareImage.image = _image;
     _shareImage.contentMode = UIViewContentModeScaleAspectFit;
     
-    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:(UIBarButtonItemStyleDone) target:self action:@selector(doneExe:)];
+    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"gif.base.alert.done", "") style:(UIBarButtonItemStyleDone) target:self action:@selector(doneExe:)];
     self.navigationItem.rightBarButtonItem = right;
 }
 
@@ -36,6 +38,8 @@
 
 - (IBAction)save:(id)sender {
     
+    // 初始化广告
+    [self createAndLoadInterstitial];
     UIImageWriteToSavedPhotosAlbum(_image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
 }
 
@@ -57,16 +61,21 @@
 - (void)showInfo:(NSString*)str andTitle:(NSString *)title
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:str preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action1 = ({
-        UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"gif.base.alert.sure", "") style:UIAlertActionStyleDefault handler:NULL];
-        action;
-    });
-    [alert addAction:action1];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"gif.base.alert.sure", "") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        if (self.interstitial.isReady) {
+            
+            [self.interstitial presentFromRootViewController:self];
+        }
+    }];
+    [alert addAction:action];
     [self presentViewController:alert animated:YES completion:NULL];
 }
 
 - (void)shareToFriends
 {
+    // 初始化广告
+    [self createAndLoadInterstitial];
     NSMutableArray *items = [NSMutableArray array];
     if (_image) {
         
@@ -75,8 +84,7 @@
         [items addObject:_image];
     }
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
-    NSMutableArray *excludedActivityTypes =  [NSMutableArray arrayWithArray:@[ UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypePrint, UIActivityTypePostToTencentWeibo, UIActivityTypeSaveToCameraRoll, UIActivityTypeMessage]];
-    
+    NSMutableArray *excludedActivityTypes =  [NSMutableArray arrayWithArray:@[ UIActivityTypeCopyToPasteboard]];
     activityViewController.excludedActivityTypes = excludedActivityTypes;
     [self presentViewController:activityViewController animated:YES completion:nil];
     
@@ -97,11 +105,7 @@
         UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:@"" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *actionSuccess = [UIAlertAction actionWithTitle:NSLocalizedString(@"gif.base.alert.sure", "") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            //                if (self.interstitial.isReady) {
-            //
-            //                    [self.interstitial presentFromRootViewController:self];
-            //                    [self createAndLoadInterstitial];
-            //                }
+            if (self.interstitial.isReady) {[self.interstitial presentFromRootViewController:self];}
         }];
         
         [alertVC addAction:actionSuccess];
@@ -109,6 +113,16 @@
     };
 }
 
+// 插页广告
+- (void)createAndLoadInterstitial {
+    
+    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:GoogleUtiID_pageInsert];
+    GADRequest *request = [GADRequest request];
+    // Request test ads on devices you specify. Your test device ID is printed to the console when
+    // an ad request is made.
+    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+    [self.interstitial loadRequest:request];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

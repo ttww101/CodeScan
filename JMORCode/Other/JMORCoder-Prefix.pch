@@ -10,7 +10,7 @@
 #define JMORCoder_Prefix_pch
 #import "UIView+Extension.h"
 #import "MBProgressHUD.h"
-
+#import <UMMobClick/MobClick.h>
 #define GoogleAppID @"ca-app-pub-5649482177498836~9470054047"
 #define GoogleUtiID_origin @"ca-app-pub-5649482177498836/9140372248"
 #define GoogleUtiID_pageInsert @"ca-app-pub-5649482177498836/1120790739"

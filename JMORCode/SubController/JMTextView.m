@@ -21,7 +21,6 @@
     if (self) {
         
         UILabel *playholed = [[UILabel alloc] initWithFrame:CGRectZero];
-//        playholed.text = @"请输入文本内容";
         playholed.textColor = [UIColor grayColor];
         [self addSubview:playholed];
         self.playholed = playholed;
