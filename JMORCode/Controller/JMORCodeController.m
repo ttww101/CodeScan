@@ -95,27 +95,13 @@ static NSString *const oneRowID = @"threeRow";
 
 // 插页广告
 - (void)createAndLoadInterstitial {
-    
-<<<<<<< HEAD
-    self.particleView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0, 84, kW, 0.38*kH)];
-    NSString *file = [[NSBundle mainBundle] pathForResource:@"loadings" ofType:@"gif"];
-    FLAnimatedImage *image = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:file]];
-    self.particleView.animatedImage = image;
-    [self.view addSubview:self.particleView];
-    
-    [self createAndLoadInterstitial];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (self.interstitial.isReady) {[self.interstitial presentFromRootViewController:self];}
-    });
-=======
     self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:GoogleUtiID_pageInsert];
     self.interstitial.delegate = self;
     GADRequest *request = [GADRequest request];
     // Request test ads on devices you specify. Your test device ID is printed to the console when
     // an ad request is made.
-    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+//    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
     [self.interstitial loadRequest:request];
->>>>>>> 1c007255df0c55638a8c9b8e66469fb862e4bbfe
 }
 
 #pragma mark Display-Time Lifecycle Notifications, GADInterstitialDelegate
