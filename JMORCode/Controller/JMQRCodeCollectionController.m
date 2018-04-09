@@ -24,17 +24,16 @@
 @implementation JMQRCodeCollectionController
 
 static NSString *const oneRowID = @"threeRow";
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-    self.navigationController.navigationBar.tintColor = JMColor(41, 41, 41);
-    NSDictionary *attr = @{
-                           NSForegroundColorAttributeName : JMColor(41, 41, 41),
-                           NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
-                           };
-    self.navigationController.navigationBar.titleTextAttributes = attr;
+//    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+//    self.navigationController.navigationBar.tintColor = JMColor(41, 41, 41);
+//    NSDictionary *attr = @{
+//                           NSForegroundColorAttributeName : JMColor(41, 41, 41),
+//                           NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
+//                           };
+//    self.navigationController.navigationBar.titleTextAttributes = attr;
 }
 
 - (NSMutableArray *)dataSource
@@ -155,12 +154,12 @@ static NSString *const oneRowID = @"threeRow";
 // 插页广告
 - (void)createAndLoadInterstitial {
     
-    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:GoogleUtiID_pageInsert];
-    GADRequest *request = [GADRequest request];
-    // Request test ads on devices you specify. Your test device ID is printed to the console when
-    // an ad request is made.
-    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
-    [self.interstitial loadRequest:request];
+//    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:GoogleUtiID_pageInsert];
+//    GADRequest *request = [GADRequest request];
+//    // Request test ads on devices you specify. Your test device ID is printed to the console when
+//    // an ad request is made.
+//    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+//    [self.interstitial loadRequest:request];
 }
 
 #pragma mark UICollectionViewDataSource,

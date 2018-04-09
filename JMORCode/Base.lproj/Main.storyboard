@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pqD-ZE-FfA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pqD-ZE-FfA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,41 +18,16 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRd-nr-R9h" customClass="JMPuzzleMenuView">
-                                <rect key="frame" x="0.0" y="383" width="375" height="264"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-j2-iPb" customClass="GADNativeExpressAdView">
-                                <rect key="frame" x="0.0" y="84" width="375" height="279"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="0.98978358507156372" green="0.41690289974212646" blue="0.52357923984527588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="IRd-nr-R9h" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4he-eQ-cC2"/>
-                            <constraint firstItem="IRd-nr-R9h" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="383" id="7lg-O5-Dns"/>
-                            <constraint firstItem="aIA-j2-iPb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8Lo-FW-Nk1"/>
-                            <constraint firstItem="aIA-j2-iPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HyR-T3-Hrh"/>
-                            <constraint firstItem="aIA-j2-iPb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ok6-kb-lyD"/>
-                            <constraint firstItem="IRd-nr-R9h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P5M-nF-4cb"/>
-                            <constraint firstItem="IRd-nr-R9h" firstAttribute="top" secondItem="aIA-j2-iPb" secondAttribute="bottom" constant="20" id="X3Q-rq-YuR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IRd-nr-R9h" secondAttribute="bottom" constant="20" id="lr4-wk-JpS"/>
-                            <constraint firstItem="IRd-nr-R9h" firstAttribute="top" secondItem="aIA-j2-iPb" secondAttribute="bottom" constant="20" id="suV-hX-Zr3"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="lbq-sB-Np8">
                         <barButtonItem key="leftBarButtonItem" image="setting" id="i6y-sD-1BW">
-                            <color key="tintColor" red="0.99918929369999998" green="1" blue="0.95669188760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="orcodeSetting:" destination="BYZ-38-t0r" id="bdW-3p-c3K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="googleAdView" destination="aIA-j2-iPb" id="yyy-LA-dNv"/>
-                        <outlet property="menuView" destination="IRd-nr-R9h" id="3DL-Wx-3LR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,10 +41,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpC-Px-a0h">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.99918929369999998" green="1" blue="0.95669188760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.99918929369999998" green="1" blue="0.95669188760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
