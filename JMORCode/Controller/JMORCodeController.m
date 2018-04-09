@@ -79,7 +79,7 @@
     // 原生广告
     [self setupAd];
     
-    self.particleView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0, 84, kW, kW*0.75)];
+    self.particleView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0, 84, kW, kH - _menuView.y)];
     NSString *file = [[NSBundle mainBundle] pathForResource:@"loadings" ofType:@"gif"];
     FLAnimatedImage *image = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:file]];
     self.particleView.animatedImage = image;
@@ -212,7 +212,7 @@
     self.googleAdView.videoController.delegate = self;
     
     GADRequest *request = [GADRequest request];
-//    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
     [self.googleAdView loadRequest:request];
 }
 
@@ -249,7 +249,7 @@
     GADRequest *request = [GADRequest request];
     // Request test ads on devices you specify. Your test device ID is printed to the console when
     // an ad request is made.
-//    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
     [self.interstitial loadRequest:request];
 }
 
