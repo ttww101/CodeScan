@@ -40,22 +40,6 @@
                            NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
                            };
     self.navigationController.navigationBar.titleTextAttributes = attr;
-    
-    int x = [self getRandomNumber:0 to:2];
-    if (x == 1) {
-    
-        if (self.interstitial.isReady) {
-            
-            [MobClick event:@"scanCodeADShow"];
-            [self.interstitial presentFromRootViewController:self];
-        }
-    }
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self createAndLoadInterstitial];
 }
 
 - (int)getRandomNumber:(int)from to:(int)to
@@ -79,11 +63,16 @@
     // 原生广告
     [self setupAd];
     
-    self.particleView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0, 84, kW, kW*0.75)];
+    self.particleView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake(0, 84, kW, 0.38*kH)];
     NSString *file = [[NSBundle mainBundle] pathForResource:@"loadings" ofType:@"gif"];
     FLAnimatedImage *image = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:file]];
     self.particleView.animatedImage = image;
     [self.view addSubview:self.particleView];
+    
+    [self createAndLoadInterstitial];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.interstitial.isReady) {[self.interstitial presentFromRootViewController:self];}
+    });
 }
 
 - (IBAction)orcodeSetting:(id)sender {
