@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITextField *editerView = [[UITextField alloc] initWithFrame:CGRectMake(0, 84, kW, 44)];
+    UITextField *editerView = [[UITextField alloc] initWithFrame:CGRectMake(10, 84, kW-20, 44)];
     editerView.delegate = self;
     editerView.layer.cornerRadius = 5;
     editerView.layer.masksToBounds = YES;

@@ -17,9 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupNavTheme];
-    [self.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
-    [self.navigationBar It_setNavigationBarBackIndicatorView:0.0];
+    // [self setupNavTheme];
+    // [self.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+    // [self.navigationBar It_setNavigationBarBackIndicatorView:0.0];
 }
 
 - (void)setupNavTheme

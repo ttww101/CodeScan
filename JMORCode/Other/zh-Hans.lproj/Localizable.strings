@@ -65,15 +65,15 @@
 "orscan.items.scanCreatCodeWIFI" = "WIFI";
 "orscan.items.scanCreatCodePwd" = "密码";
 "orscan.items.scanCreatCodeLocalN" = "地址";
-"orscan.items.scanCreatCodeInputText" = "输入文本内容...";
-"orscan.items.scanCreatCodeInputEmail" = "输入邮箱...";
-"orscan.items.scanCreatCodeInputWebSite" = "输入网址...";
-"orscan.items.scanCreatCodeInputPhoneNumber" = "输入电话号码...";
-"orscan.items.scanCreatCodeInputNameDis" = "输入名片...";
-"orscan.items.scanCreatCodeInputWifiPwd" = "输入WiFi账号密码...";
-"orscan.items.scanCreatCodeInputLocalN" = "输入地址...";
-"orscan.items.scanCreatCodeInputPwd" = "输入密码...";
-"orscan.items.scanCreatCodeInputNumbers" = "输入密码...";
+"orscan.items.scanCreatCodeInputText" = " 输入文本内容...";
+"orscan.items.scanCreatCodeInputEmail" = " 输入邮箱...";
+"orscan.items.scanCreatCodeInputWebSite" = " 输入网址...";
+"orscan.items.scanCreatCodeInputPhoneNumber" = " 输入电话号码...";
+"orscan.items.scanCreatCodeInputNameDis" = " 输入名片...";
+"orscan.items.scanCreatCodeInputWifiPwd" = " 输入WiFi账号密码...";
+"orscan.items.scanCreatCodeInputLocalN" = " 输入地址...";
+"orscan.items.scanCreatCodeInputPwd" = " 输入密码...";
+"orscan.items.scanCreatCodeInputNumbers" = " 输入密码...";
 "orscan.items.scanCreatCodeCreat" = "生成";
 
 

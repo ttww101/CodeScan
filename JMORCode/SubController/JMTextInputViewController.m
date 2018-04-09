@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    JMTextView *textView = [[JMTextView alloc] initWithFrame:CGRectMake(0, 84, kW, 200)];
+    JMTextView *textView = [[JMTextView alloc] initWithFrame:CGRectMake(10, 84, kW-20, kH/2-80)];
     textView.playholed.text = self.playholder;
     textView.delegate = (id)self;
     textView.font = [UIFont fontWithName:@"Arial" size:16.5f];

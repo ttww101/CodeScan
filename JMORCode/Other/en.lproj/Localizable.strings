@@ -62,7 +62,7 @@
 "orscan.items.scanSysSetting" = "Enter the system\n【Set】->【Privacy】->【Album】\n%@Turn on camera access";
 "orscan.items.scanShare" = "Share";
 "orscan.items.scanSaveLib" = "SaveToAlbum";
-"orscan.items.scanInputNumber" = "Enter Number";
+"orscan.items.scanInputNumber" = " Enter Number";
 "orscan.items.scanCreatCodeFrist" = "GenerateBarcodeFrist";
 "orscan.items.scanAlbum" = "Album";
 
@@ -74,14 +74,14 @@
 "orscan.items.scanCreatCodePwd" = "Pwd";
 "orscan.items.scanCreatCodeWIFI" = "WIFI";
 "orscan.items.scanCreatCodeLocalN" = "Address";
-"orscan.items.scanCreatCodeInputText" = "EnterText...";
-"orscan.items.scanCreatCodeInputEmail" = "EnterEmail...";
-"orscan.items.scanCreatCodeInputWebSite" = "EnterWeb...";
-"orscan.items.scanCreatCodeInputPhoneNumber" = "EnterPhoneNumber...";
-"orscan.items.scanCreatCodeInputNameDis" = "EnterBusinessCard...";
-"orscan.items.scanCreatCodeInputWifiPwd" = "Enter WiFi Number...";
-"orscan.items.scanCreatCodeInputLocalN" = "EnterAddress...";
-"orscan.items.scanCreatCodeInputPwd" = "Enter Number...";
+"orscan.items.scanCreatCodeInputText" = " EnterText...";
+"orscan.items.scanCreatCodeInputEmail" = " EnterEmail...";
+"orscan.items.scanCreatCodeInputWebSite" = " EnterWeb...";
+"orscan.items.scanCreatCodeInputPhoneNumber" = " EnterPhoneNumber...";
+"orscan.items.scanCreatCodeInputNameDis" = " EnterBusinessCard...";
+"orscan.items.scanCreatCodeInputWifiPwd" = " Enter WiFi Number...";
+"orscan.items.scanCreatCodeInputLocalN" = " EnterAddress...";
+"orscan.items.scanCreatCodeInputPwd" = " Enter Number...";
 "orscan.items.scanCreatCodeInputNumbers" = "Enter Number...";
 "orscan.items.scanCreatCodeCreat" = "Generate";
 
