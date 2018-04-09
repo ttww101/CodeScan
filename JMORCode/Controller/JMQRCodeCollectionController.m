@@ -24,16 +24,15 @@
 @implementation JMQRCodeCollectionController
 
 static NSString *const oneRowID = @"threeRow";
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-//    self.navigationController.navigationBar.tintColor = JMColor(41, 41, 41);
-//    NSDictionary *attr = @{
-//                           NSForegroundColorAttributeName : JMColor(41, 41, 41),
-//                           NSFontAttributeName : [UIFont boldSystemFontOfSize:18.0]
-//                           };
-//    self.navigationController.navigationBar.titleTextAttributes = attr;
+    if (self.interstitial.isReady) {
+        
+        [MobClick event:@"scanCodeADShow"];
+        [self.interstitial presentFromRootViewController:self];
+    }
 }
 
 - (NSMutableArray *)dataSource
@@ -41,6 +40,7 @@ static NSString *const oneRowID = @"threeRow";
     if (!_dataSource) { self.dataSource = [NSMutableArray array];}
     return _dataSource;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -59,7 +59,6 @@ static NSString *const oneRowID = @"threeRow";
     collection.backgroundColor = JMTabViewBaseColor;
     collection.dataSource = self;
     collection.delegate = self;
-//    collection.backgroundColor = JMColor(250, 108, 135);
     collection.showsVerticalScrollIndicator = NO;
     [collection registerClass:[JMQRCodeCollectionViewCell class] forCellWithReuseIdentifier:oneRowID];
     [self.view addSubview:collection];
@@ -73,9 +72,16 @@ static NSString *const oneRowID = @"threeRow";
     return cell;
 }
 
+- (int)getRandomNumber:(int)from to:(int)to
+{
+    return (int)(from + (arc4random() % (to-from+1)));
+}
+
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    int nu = [self getRandomNumber:0 to:4];
+    if (nu == 2) {[self createAndLoadInterstitial];}
     NSString *str = [NSString stringWithFormat:@"scanCodeCreat_%ld", indexPath.row+1];
     [MobClick event:str];
     if (indexPath.row == 0) {

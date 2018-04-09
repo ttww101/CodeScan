@@ -30,26 +30,11 @@ static NSString *const oneRowID = @"threeRow";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    int x = [self getRandomNumber:0 to:2];
-    if (x == 1) {
-    
-        if (self.interstitial.isReady) {
-            
-            [MobClick event:@"scanCodeADShow"];
-            [self.interstitial presentFromRootViewController:self];
-        }
+    if (self.interstitial.isReady) {
+        
+        [MobClick event:@"scanCodeADShow"];
+        [self.interstitial presentFromRootViewController:self];
     }
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self createAndLoadInterstitial];
-}
-
-- (int)getRandomNumber:(int)from to:(int)to
-{
-    return (int)(from + (arc4random() % (to-from+1)));
 }
 
 - (void)viewDidLoad {

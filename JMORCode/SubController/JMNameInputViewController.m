@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITextField *content = [[UITextField alloc] initWithFrame:CGRectMake(0, 74, kW, 40)];
+    UITextField *content = [[UITextField alloc] initWithFrame:CGRectMake(10, 74, kW-20, 40)];
     content.delegate = self;
     content.layer.cornerRadius = 5;
     content.layer.masksToBounds = YES;

@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITextField *content = [[UITextField alloc] initWithFrame:CGRectMake(0, 74, kW, 40)];
+    UITextField *content = [[UITextField alloc] initWithFrame:CGRectMake(10, 74, kW-20, 40)];
     content.delegate = self;
     content.layer.cornerRadius = 5;
     content.layer.masksToBounds = YES;
@@ -30,7 +30,7 @@
     [self.view addSubview:content];
     self.content = content;
     
-    JMTextView *textView = [[JMTextView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(content.frame)+10, kW, 200)];
+    JMTextView *textView = [[JMTextView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(content.frame)+10, kW-20, kH-124-280)];
     textView.playholed.text = self.playholder;
     textView.delegate = (id)self;
     textView.font = [UIFont fontWithName:@"Arial" size:16.5f];
