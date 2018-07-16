@@ -32,9 +32,17 @@ static NSString *const oneRowID = @"threeRow";
     [super viewWillAppear:animated];
     if (self.interstitial.isReady) {
         
-        [MobClick event:@"scanCodeADShow"];
-        [self.interstitial presentFromRootViewController:self];
+        if ([self getRandom:0 to:4] == 3) {
+        
+            [MobClick event:@"scanCodeADShow"];
+            [self.interstitial presentFromRootViewController:self];
+        }
     }
+}
+
+- (int)getRandom:(int)from to:(int)to
+{
+    return (int)(from + (arc4random() % (to-from + 1)));
 }
 
 - (void)viewDidLoad {
@@ -99,10 +107,24 @@ static NSString *const oneRowID = @"threeRow";
     self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:GoogleUtiID_pageInsert];
     self.interstitial.delegate = self;
     GADRequest *request = [GADRequest request];
-    // Request test ads on devices you specify. Your test device ID is printed to the console when
-    // an ad request is made.
     request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
     [self.interstitial loadRequest:request];
+}
+
+- (GADBannerView *)creatBannerAD
+{
+    CGSize adSize = CGSizeMake((kW-30)/2, (kH-40-64)/3);
+    GADBannerView *bannerView = [[GADBannerView alloc] initWithAdSize:GADAdSizeFromCGSize(adSize)];
+    bannerView.adUnitID = GoogleUtiID_banner;
+    bannerView.rootViewController = self;
+    GADRequest *request = [GADRequest request];
+#ifdef DEBUG
+    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b",kGADSimulatorID];
+#else
+    //do sth.
+#endif
+    [bannerView loadRequest:request];
+    return bannerView;
 }
 
 #pragma mark Display-Time Lifecycle Notifications, GADInterstitialDelegate
@@ -116,7 +138,10 @@ static NSString *const oneRowID = @"threeRow";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     JMQRCodeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:oneRowID forIndexPath:indexPath];
-    cell.model = self.dataSource[indexPath.row];
+    if (indexPath.row == 5) {
+        [cell.contentView addSubview:[self creatBannerAD]];
+    }
+    cell.model = _dataSource[indexPath.row];
     return cell;
 }
 
@@ -170,22 +195,22 @@ static NSString *const oneRowID = @"threeRow";
         JMBarCodeViewController *drawBarVC = [[JMBarCodeViewController alloc] init];
         [self.navigationController pushViewController:drawBarVC animated:YES];
     }else{
-        [MobClick event:@"scanCodeADShow"];
-        [self createAndLoadInterstitial];
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-            
-            sleep(1);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [hud hideAnimated:YES];
-                if (self.interstitial.isReady) {
-                    
-                    [MobClick event:@"scanCodeADShow"];
-                    [self.interstitial presentFromRootViewController:self];
-                }
-            });
-        });
+//        [MobClick event:@"scanCodeADShow"];
+//        [self createAndLoadInterstitial];
+//        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+//        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
+//
+//            sleep(1);
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//
+//                [hud hideAnimated:YES];
+//                if (self.interstitial.isReady) {
+//
+//                    [MobClick event:@"scanCodeADShow"];
+//                    [self.interstitial presentFromRootViewController:self];
+//                }
+//            });
+//        });
     }
 }
 

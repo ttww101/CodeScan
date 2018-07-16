@@ -22,6 +22,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         UIImageView *leftImage = [[UIImageView alloc] init];
+        leftImage.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:leftImage];
         leftImage.tintColor = [UIColor grayColor];
         self.leftImage = leftImage;

@@ -14,6 +14,8 @@
 #define GoogleAppID @"ca-app-pub-5649482177498836~9470054047"
 #define GoogleUtiID_origin @"ca-app-pub-5649482177498836/9140372248"
 #define GoogleUtiID_pageInsert @"ca-app-pub-5649482177498836/1120790739"
+#define GoogleUtiID_banner @"ca-app-pub-5649482177498836/3247198801"
+#define test @"ca-app-pub-3940256099942544/2934735716"
 
 #define alertHeight 50
 #define kW [UIScreen mainScreen].bounds.size.width

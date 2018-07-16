@@ -15,6 +15,7 @@
 #import "JMAccountHeaderFooter.h"
 #import "JMAboutHeaderView.h"
 
+@import GoogleMobileAds;
 @interface JMAboutUsController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) UIView *titleView;
 @property (nonatomic, weak) UITableView *tabView;
@@ -48,7 +49,6 @@
 {
     JMAboutHeaderView *header = [[JMAboutHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.width*0.45)];
     UITableView *tabView = [[UITableView alloc] initWithFrame:self.view.bounds style:(UITableViewStyleGrouped)];
-    tabView.scrollEnabled = NO;
     [tabView registerClass:[JMAboutCell class] forCellReuseIdentifier:@"aboutCell"];
     tabView.delegate = self;
     tabView.dataSource = self;
@@ -90,6 +90,9 @@
     JMAboutCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {cell = [[JMAboutCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:ID];}
     cell.model = self.dataSource[indexPath.section][indexPath.row];
+    if (indexPath.section == 1 && indexPath.row ==1) {
+        [cell.contentView addSubview:[self creatBannerAD]];
+    }
     return cell;
 }
 
@@ -173,7 +176,7 @@
 {
     NSArray *secOne = @[NSLocalizedString(@"gif.set.aboutUs.rowZero", ""), NSLocalizedString(@"gif.set.aboutUs.rowOne", ""), NSLocalizedString(@"gif.set.aboutUs.rowTwo", "")];
     
-    NSArray *secTwo = @[@{@"title":NSLocalizedString(@"gif.base.otherApp.epubreader", ""), @"icon":@"ebookreader"}];
+    NSArray *secTwo = @[@{@"title":NSLocalizedString(@"gif.base.otherApp.epubreader", ""), @"icon":@"ebookreader"},@{@"title":@"AD", @"icon":@"cell-ad"}];
     
     NSMutableArray *secOneArr = [NSMutableArray array];
     for (NSString *titles in secOne) {
@@ -195,6 +198,22 @@
     }
     
     self.dataSource = @[secOneArr, secTwoArr];
+}
+
+- (GADBannerView *)creatBannerAD
+{
+    CGSize adSize = CGSizeMake(kW, 44);
+    GADBannerView *bannerView = [[GADBannerView alloc] initWithAdSize:GADAdSizeFromCGSize(adSize)];
+    bannerView.adUnitID = GoogleUtiID_banner;
+    bannerView.rootViewController = self;
+    GADRequest *request = [GADRequest request];
+#ifdef DEBUG
+    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b",kGADSimulatorID];
+#else
+    //do sth.
+#endif
+    [bannerView loadRequest:request];
+    return bannerView;
 }
 
 - (void)didReceiveMemoryWarning {
