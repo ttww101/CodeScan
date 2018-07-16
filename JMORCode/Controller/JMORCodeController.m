@@ -103,11 +103,14 @@ static NSString *const oneRowID = @"threeRow";
 
 // 插页广告
 - (void)createAndLoadInterstitial {
-    
     self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:GoogleUtiID_pageInsert];
     self.interstitial.delegate = self;
     GADRequest *request = [GADRequest request];
-    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b", kGADSimulatorID];
+#ifdef DEBUG
+    request.testDevices = @[@"38f0acbef2e79c22b6b8fbab2669b75b",kGADSimulatorID];
+#else
+    //do sth.
+#endif
     [self.interstitial loadRequest:request];
 }
 
