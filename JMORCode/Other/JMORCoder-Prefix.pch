@@ -39,7 +39,7 @@
 #define D_Main_Appdelegate (AppDelegate *)[UIApplication sharedApplication].delegate
 #define AppiTunesID_ScanCode @"https://itunes.apple.com/cn/app/ScanCode-QR/id1316841712?mt=8"
 #define AppiTunesID_ebookReader @"https://itunes.apple.com/cn/app/ebookreader/id1269413156?mt=8"
-
+#define AppiTunesID_Wallpaper @"https://itunes.apple.com/cn/app/%E6%9C%80%E7%BE%8E%E5%A3%81%E7%BA%B8-%E9%AB%98%E6%B8%85%E5%A3%81%E7%BA%B8%E4%B8%8B%E8%BD%BD/id1337725189?mt=8"
 // @"[^"]*[\u4E00-\u9FA5]+[^"\n]*?"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

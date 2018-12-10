@@ -90,9 +90,9 @@
     JMAboutCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {cell = [[JMAboutCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:ID];}
     cell.model = self.dataSource[indexPath.section][indexPath.row];
-    if (indexPath.section == 1 && indexPath.row ==1) {
-        [cell.contentView addSubview:[self creatBannerAD]];
-    }
+//    if (indexPath.section == 1 && indexPath.row ==2) {
+//        [cell.contentView addSubview:[self creatBannerAD]];
+//    }
     return cell;
 }
 
@@ -128,6 +128,11 @@
         
         [MobClick event:@"masterboard_set_one"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AppiTunesID_ebookReader]];
+        
+    }else if (indexPath.section ==1 && indexPath.row == 1){
+        
+        [MobClick event:@"masterboard_set_one"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AppiTunesID_Wallpaper]];
         
     }
 }
@@ -176,7 +181,8 @@
 {
     NSArray *secOne = @[NSLocalizedString(@"gif.set.aboutUs.rowZero", ""), NSLocalizedString(@"gif.set.aboutUs.rowOne", ""), NSLocalizedString(@"gif.set.aboutUs.rowTwo", "")];
     
-    NSArray *secTwo = @[@{@"title":NSLocalizedString(@"gif.base.otherApp.epubreader", ""), @"icon":@"ebookreader"},@{@"title":@"AD", @"icon":@"cell-ad"}];
+    NSArray *secTwo = @[@{@"title":NSLocalizedString(@"gif.base.otherApp.epubreader", ""), @"icon":@"ebookreader"},
+  @{@"title":@"美图壁纸", @"icon":@"wallpaper"}];
     
     NSMutableArray *secOneArr = [NSMutableArray array];
     for (NSString *titles in secOne) {
